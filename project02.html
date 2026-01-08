@@ -84,94 +84,181 @@
             border-bottom: 2px solid #e2e8f0;
         }
 
-        .task-list {
-            list-style: none;
+        .section h3 {
+            font-size: 1.1rem;
+            color: #f093fb;
+            margin: 1.5rem 0 1rem 0;
         }
 
-        .task-item {
-            padding: 0.7rem 0;
+        .reference-link {
+            display: block;
+            background: #f8fafc;
+            border: 2px solid #f5576c;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .reference-link:hover {
+            background: #f5576c;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .flow-list {
+            list-style: none;
+            counter-reset: flow-counter;
+        }
+
+        .flow-item {
+            padding: 1rem 0;
             border-bottom: 1px solid #f1f5f9;
             display: flex;
             align-items: start;
-            gap: 0.75rem;
-        }
-
-        .task-item:last-child {
-            border-bottom: none;
-        }
-
-        .task-icon {
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            background: #f5576c;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.1rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #f5576c;
-            color: white;
-            padding: 0.4rem 0.9rem;
-            border-radius: 16px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin: 0.3rem 0.3rem 0.3rem 0;
-        }
-
-        .timeline {
-            margin-top: 1rem;
-        }
-
-        .timeline-item {
-            display: flex;
             gap: 1rem;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px dashed #e2e8f0;
+            counter-increment: flow-counter;
         }
 
-        .timeline-item:last-child {
+        .flow-item:last-child {
             border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
         }
 
-        .timeline-marker {
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
+        .flow-number {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 700;
             font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 0.2rem;
         }
 
-        .timeline-content {
+        .flow-number::before {
+            content: counter(flow-counter);
+        }
+
+        .flow-content {
             flex: 1;
-            padding-top: 0.2rem;
         }
 
-        .timeline-title {
-            font-weight: 600;
-            color: #f5576c;
+        .flow-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .flow-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .requirement-box {
+            background: #fff3cd;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .requirement-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .requirement-box ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .requirement-box li {
             margin-bottom: 0.3rem;
         }
 
-        .timeline-desc {
+        .goal-box {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .goal-box strong {
+            color: #059669;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .sheet-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+        }
+
+        .sheet-card h4 {
+            color: #f5576c;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .sheet-card p {
             font-size: 0.9rem;
             color: #64748b;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            position: relative;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .code-block-title {
+            color: #fbbf24;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #f5576c;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: #f093fb;
+            transform: translateY(-2px);
         }
 
         .nav-buttons {
@@ -216,6 +303,13 @@
             .header h1 {
                 font-size: 1.6rem;
             }
+
+            .copy-button {
+                position: static;
+                display: block;
+                margin-bottom: 1rem;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -223,84 +317,594 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="breadcrumb"><a href="index.html">← プロジェクト一覧に戻る</a></div>
+            <div class="breadcrumb">
+                <a href="index.html">← プロジェクト一覧に戻る</a>
+            </div>
             <div class="project-number">プロジェクト②</div>
             <h1>顧客用資料作成の自動化</h1>
-            <p>複数Excelファイルからの自動マージシステム</p>
+            <p>キャリアアップ教育スケジュール + 講座詳細の自動マージシステム</p>
         </div>
     </header>
 
     <div class="container">
         <div class="section">
             <h2>プロジェクト概要</h2>
-            <p>2つのExcelファイルから必要な項目だけを抽出し、1つの統合ファイルを自動生成するシステムです。手作業による転記ミスをなくし、業務時間を大幅に削減します。</p>
+            <p>顧客に提出する「キャリアアップ教育スケジュール」と「講座詳細」を一体で作成する業務を自動化します。職種別・年次別のカリキュラム提案表に連動して、講座詳細シートが自動生成される仕組みを構築します。</p>
+
+            <a href="https://docs.google.com/spreadsheets/d/1j0nHAcpBYNqROU2YdGbtiwJcm-9BHr09mVcLOyj_wa4/edit?gid=420015538#gid=420015538"
+                class="reference-link" target="_blank">
+                📊 現状デモ（Apps Script）を開く
+            </a>
         </div>
 
         <div class="section">
-            <h2>主な機能</h2>
-            <ul class="task-list">
-                <li class="task-item"><span class="task-icon">1</span>
-                    <div>複数Excelファイルの自動読み込み</div>
-                </li>
-                <li class="task-item"><span class="task-icon">2</span>
-                    <div>必要項目の抽出と整形</div>
-                </li>
-                <li class="task-item"><span class="task-icon">3</span>
-                    <div>データマッピングと統合処理</div>
-                </li>
-                <li class="task-item"><span class="task-icon">4</span>
-                    <div>テンプレートに基づいた出力ファイル生成</div>
-                </li>
-                <li class="task-item"><span class="task-icon">5</span>
-                    <div>バリデーション・エラーチェック機能</div>
-                </li>
-            </ul>
+            <h2>対象成果物（顧客提出物の構成）</h2>
+
+            <h3>1. キャリアアップ教育スケジュール（年間8時間の提案表）</h3>
+            <p style="margin-bottom: 1rem;">職種別に、1年次〜5年目以降までの年次ごとのカリキュラムを提案します。</p>
+
+            <div class="requirement-box">
+                <strong>📋 構成</strong>
+                <ul>
+                    <li><strong>1年次</strong>: 年間8時間のカリキュラム</li>
+                    <li><strong>2年次</strong>: 年間8時間のカリキュラム</li>
+                    <li><strong>3年次</strong>: 年間8時間のカリキュラム</li>
+                    <li><strong>4年次</strong>: 年間8時間のカリキュラム</li>
+                    <li><strong>5年目以降</strong>: 必要に応じて</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 1rem; color: #64748b; font-size: 0.95rem;">
+                各年次で「この講座を受けさせれば良い」という形で提案表を作成します。
+            </p>
+
+            <h3>2. 講座詳細（自動生成シート）</h3>
+            <p style="margin-bottom: 1rem;">提案表で選んだ講座名に対応して、以下の情報を一覧化します。</p>
+
+            <div class="requirement-box">
+                <strong>📋 記載内容</strong>
+                <ul>
+                    <li>どんな内容か（講座概要）</li>
+                    <li>何が理解できるのか（到達目標）</li>
+                    <li>その他詳細情報</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 1rem; color: #64748b; font-size: 0.95rem;">
+                年次・職種が変わっても、提案表に入れた講座に対応して講座詳細が自動的に並ぶことが理想です。
+            </p>
         </div>
 
         <div class="section">
-            <h2>技術スタック(案)</h2>
-            <p style="margin-bottom: 1rem;">以下の技術スタックを提案しますが、インターンの方のご経験やご希望に応じて調整可能です。</p>
-            <div>
-                <span class="badge">Python</span>
-                <span class="badge">pandas</span>
-                <span class="badge">openpyxl</span>
-                <span class="badge">ExcelマクロVBA</span>
-                <span class="badge">データ検証ライブラリ</span>
+            <h2>現状と課題</h2>
+
+            <div class="requirement-box">
+                <strong>⚠️ 現状</strong>
+                <ul>
+                    <li>Excel管理 / Googleスプレッドシート管理が混在</li>
+                    <li>Apps Scriptでデモ的なものは存在</li>
+                    <li>手作業部分が多く、時間がかかる</li>
+                    <li>講座詳細の自動更新が不完全</li>
+                </ul>
+            </div>
+
+            <div class="goal-box">
+                <strong>🎯 目標</strong>
+                <p>より良くブラッシュアップし、業務効率を大幅に向上させたい。</p>
             </div>
         </div>
 
         <div class="section">
-            <h2>ざっくりタスクリスト</h2>
-            <p style="margin-bottom: 1rem;">以下のステップで段階的に進めていく想定です。各ステップの詳細は協議しながら決定します。</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">入出力ファイル構造の把握</div>
-                        <div class="timeline-desc">現状の2つのExcelファイル内容確認</div>
+            <h2>シート構成案</h2>
+            <p style="margin-bottom: 1.5rem;">以下のシート構成で、効率的な資料作成を実現します。</p>
+
+            <div class="sheet-card">
+                <h4>Sheet A: キャリアアップ教育スケジュール（提案表）</h4>
+                <p><strong>役割:</strong> 職種選択、年次ブロック（1年次〜4年次、5年目以降）</p>
+                <p><strong>機能:</strong> 各年次で「合計8時間」になるよう講座を配置できる入力フォーム</p>
+            </div>
+
+            <div class="sheet-card">
+                <h4>Sheet B: 講座詳細（自動生成）</h4>
+                <p><strong>役割:</strong> Sheet Aで選ばれた講座名をもとに、講座説明が一覧化される</p>
+                <p><strong>機能:</strong> 自動連動・自動更新</p>
+            </div>
+
+            <div class="sheet-card">
+                <h4>Sheet M: 講座マスタ</h4>
+                <p><strong>役割:</strong> 全講座の基礎データベース</p>
+                <p><strong>内容:</strong> 講座名、時間数、概要、到達目標、細部訓練項目、期待される効果など</p>
+            </div>
+
+            <div class="sheet-card">
+                <h4>Sheet C: 顧客情報/表紙（オプション）</h4>
+                <p><strong>役割:</strong> 提出書類の表紙情報</p>
+                <p><strong>内容:</strong> 会社名、提出日、担当者、版数など</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>自動化要件（GAS/VBA で実現したい機能）</h2>
+
+            <h3>1. 提案表連動での講座詳細自動更新</h3>
+            <div class="requirement-box">
+                <strong>機能</strong>
+                <p>提案表（Sheet A）で講座名を選択・変更すると、講座詳細（Sheet B）が自動的に更新される。</p>
+            </div>
+
+            <h3>2. 印刷用レイアウト整形（ボタン1つで実行）</h3>
+            <div class="requirement-box">
+                <strong>機能</strong>
+                <ul>
+                    <li>印刷範囲設定</li>
+                    <li>改ページ位置の調整</li>
+                    <li>余白設定</li>
+                    <li>ヘッダー/フッター設定</li>
+                    <li>繰り返し行の設定</li>
+                </ul>
+            </div>
+
+            <h3>3. 保護（編集可能範囲の制御）</h3>
+            <div class="requirement-box">
+                <strong>目的</strong>
+                <p>顧客提出用の崩れ防止。編集して良いセル（入力欄）のみ許可。</p>
+                <strong>実装</strong>
+                <ul>
+                    <li>シート保護</li>
+                    <li>範囲保護</li>
+                    <li>入力セルのみ編集可能に設定</li>
+                </ul>
+            </div>
+
+            <h3>4. 見やすさ向上</h3>
+            <div class="requirement-box">
+                <strong>機能</strong>
+                <ul>
+                    <li>罫線の自動設定</li>
+                    <li>見出しの強調表示</li>
+                    <li>色分け（カテゴリ別・年次別）</li>
+                    <li>固定表示（ヘッダー行の固定）</li>
+                    <li>入力ガイド（データ検証・プルダウン）</li>
+                </ul>
+            </div>
+
+            <h3>5. PDF出力（オプション）</h3>
+            <div class="requirement-box">
+                <strong>Google Apps Scriptの場合</strong>
+                <p>PDF生成してDriveに保存、またはダウンロード導線を提供</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>主なフロー（現場手順）</h2>
+            <p style="margin-bottom: 1.5rem;">以下の手順で、顧客提出資料を作成します。</p>
+
+            <ol class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">職種選択</div>
+                        <div class="flow-desc">対象となる職種（製造派遣、物流派遣、事務派遣など）を選択します。</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">マッピングロジック設計</div>
-                        <div class="timeline-desc">どの項目をどう組み合わせるか定義</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">年次別講座の選択</div>
+                        <div class="flow-desc">1年次〜5年目以降まで、各年度で年間8時間になるよう講座を選択・配置します。</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">自動化スクリプト開発</div>
-                        <div class="timeline-desc">読込・抽出・統合処理の実装</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">講座詳細の自動生成</div>
+                        <div class="flow-desc">選択した講座に対応して、講座詳細シートが自動的に更新されます。</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">テスト・改善</div>
-                        <div class="timeline-desc">サンプルデータで動作確認</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">印刷用整形（ボタン実行）</div>
+                        <div class="flow-desc">印刷レイアウト整形ボタンを押して、印刷範囲・改ページ・罫線などを自動調整します。</div>
                     </div>
-                </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">確認・微調整</div>
+                        <div class="flow-desc">プレビューで確認し、必要に応じて微調整します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">PDF出力・顧客提出</div>
+                        <div class="flow-desc">PDF化して顧客へ提出します。</div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>成果物（プロジェクト②の完成定義）</h2>
+
+            <div class="goal-box">
+                <strong>✅ 完成の定義</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>顧客向けにそのまま出せる「スケジュール提案表＋講座詳細」が作れるテンプレート</li>
+                    <li>A4（または指定サイズ）でPDF化しても崩れず、見栄えが良い</li>
+                    <li>保護が効いており、提出用の体裁が崩れにくい</li>
+                    <li>手順が簡単（例：職種選択→講座選択→ボタンで整形→PDF出力）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>使用ツール・技術</h2>
+
+            <div class="requirement-box">
+                <strong>📌 実装方針</strong>
+                <p>要件に応じて、以下のいずれか（または両対応）を検討します。</p>
+                <ul>
+                    <li><strong>Googleスプレッドシート</strong>: Google Apps Script（GAS）</li>
+                    <li><strong>Excel</strong>: VBA（マクロ）</li>
+                </ul>
+                <p style="margin-top: 0.5rem;">現状デモがGASのため、まずGASを主軸に設計してOK。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>現在のApps Scriptコード（保管用）</h2>
+            <p style="margin-bottom: 1rem;">以下は、現在使用しているApps Scriptのコードです。このコードは一言一句変更せず保管しています。</p>
+
+            <div class="code-block">
+                <button class="copy-button" onclick="copyAppsScript()">📋 コピー</button>
+                <div class="code-block-title">▼ 現在のApps Scriptコード（全文）</div>
+                <pre id="appsScript" style="white-space: pre-wrap; margin: 0;">/**
+ * メニューを追加する関数
+ */
+function onOpen() {
+  const ui = SpreadsheetApp.getUi();
+  ui.createMenu('★便利ツール')
+    .addItem('全カテゴリ一括作成（全自動・履歴あり）', 'createAllCategorySheetsHistory')
+    .addSeparator() // 区切り線
+    .addItem('ミスチェック（選択範囲を赤く）', 'checkTypos')
+    .addItem('赤色を元に戻す（選択範囲）', 'resetRedCells')
+    .addSeparator() // 区切り線
+    .addItem('作成済みシートを全削除（お掃除）', 'deleteResultSheets')
+    .addToUi();
+}
+
+/**
+ * 【メイン機能】
+ * スケジュール表全体を読み込み、カテゴリごとにシートを自動作成する
+ * （名寄せ・重複削除・並び替え・履歴保存機能付き）
+ */
+function createAllCategorySheetsHistory() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+
+  // ■設定：シート名の指定
+  const dbSheetName = 'DB';
+  const scheduleSheetName = 'キャリアアップ教育研修スケジュール';
+
+  // 1. DBシート読み込み
+  const dbSheet = ss.getSheetByName(dbSheetName);
+  if (!dbSheet) {
+    SpreadsheetApp.getUi().alert('エラー：「DB」シートが見つかりません。シート名を確認してください。');
+    return;
+  }
+
+  // DBデータの取得と列の自動検出
+  const lastRowDB = dbSheet.getLastRow();
+  const lastColDB = dbSheet.getLastColumn();
+  const dbData = dbSheet.getRange(1, 1, lastRowDB, lastColDB).getValues();
+  const headers = dbData[0]; // 1行目（ヘッダー）
+
+  // 列名からインデックスを探す（列ズレ対策）
+  const getColIndex = (name) => headers.findIndex(h => String(h).includes(name));
+  const colCategory = getColIndex('訓練');             // B列想定：訓練区分
+  const colName     = getColIndex('具体的な教育訓練'); // C列想定：講座名
+  const colTime     = getColIndex('時間数');           // D列想定：時間
+
+  if (colCategory === -1 || colName === -1 || colTime === -1) {
+    SpreadsheetApp.getUi().alert('エラー：DBシートに「訓練」「具体的な教育訓練」「時間数」という名前の列が見つかりません。');
+    return;
+  }
+
+  // 文字の正規化関数（スペースやカッコを無視して比較するため）
+  const normalize = (str) => String(str).replace(/[ 　]/g, "").replace(/[「」『』\(\)（）\[\]]/g, "").trim();
+
+  // 辞書作成
+  const curriculumMap = {};
+  for (let i = 1; i < dbData.length; i++) {
+    const row = dbData[i];
+    // キーを「講座名_時間」にして、同名でも時間が違えば区別する
+    const uniqueKey = normalize(row[colName]) + "_" + normalize(row[colTime]);
+    if (normalize(row[colName])) {
+      curriculumMap[uniqueKey] = row;
+    }
+  }
+
+  // 2. スケジュール表読み込み
+  let activeSheet = ss.getActiveSheet();
+  // DBシートや作成済みシートを開いている場合は、スケジュール表を自動で探しに行く
+  if (activeSheet.getName() === dbSheetName || activeSheet.getName().includes('印刷用詳細')) {
+    activeSheet = ss.getSheetByName(scheduleSheetName);
+    if (!activeSheet) {
+      // 名前で見つからない場合、一番左のシートを仮定
+      activeSheet = ss.getSheets()[0];
+    }
+  }
+
+  const range = activeSheet.getDataRange();
+  const values = range.getValues();
+
+  // カテゴリごとのデータ格納用
+  let categorizedRows = {};
+  let currentCategory = "その他";
+
+  // 3. スケジュール表をスキャン＆名寄せ
+  values.forEach(row => {
+    // A列を見てカテゴリ判定
+    let cellA = String(row[0]).trim();
+
+    // 除外ワードでなければカテゴリ更新のチャンス
+    if (cellA && !cellA.includes("年目") && !cellA.includes("合計") && !cellA.includes("作成")) {
+
+      // ★名寄せロジック
+      if (cellA.includes("製造")) {
+        currentCategory = "製造派遣";
+      } else if (cellA.includes("物流")) {
+        currentCategory = "物流派遣";
+      } else if (cellA.includes("事務") || cellA.includes("オフィス") || cellA.includes("PC")) {
+        currentCategory = "事務派遣";
+      } else if (cellA.includes("清掃")) {
+        currentCategory = "清掃派遣";
+      } else if (cellA.includes("販売") || cellA.includes("接客")) {
+        currentCategory = "販売接客派遣";
+      } else if (cellA.includes("介護") || cellA.includes("福祉")) {
+        currentCategory = "介護福祉派遣";
+      } else if (cellA.includes("IT") || cellA.includes("エンジニア")) {
+        currentCategory = "ITエンジニア派遣";
+      } else {
+        // それ以外はそのままの名前を使う
+        currentCategory = cellA.replace(/[\r\n]/g, "");
+      }
+    }
+
+    // 行の中のセルを順番に見て講座を抽出
+    row.forEach(cellValue => {
+      const cleanName = normalize(cellValue);
+      // DB辞書から探す
+      for (const [uniqueKey, dbRow] of Object.entries(curriculumMap)) {
+        // 前方一致でヒットさせる（講座名が合っていればOK）
+        if (uniqueKey.startsWith(cleanName + "_")) {
+
+          // カテゴリの箱がなければ作る
+          if (!categorizedRows[currentCategory]) {
+            categorizedRows[currentCategory] = { rows: [], seen: new Set() };
+          }
+
+          // 重複チェック：まだそのカテゴリに入っていなければ追加
+          if (!categorizedRows[currentCategory].seen.has(uniqueKey)) {
+            categorizedRows[currentCategory].rows.push(dbRow);
+            categorizedRows[currentCategory].seen.add(uniqueKey);
+          }
+          break; // 1つのセルにつき1ヒットで次へ
+        }
+      }
+    });
+  });
+
+  // 4. シート出力処理
+  const categories = Object.keys(categorizedRows);
+  if (categories.length === 0) {
+    SpreadsheetApp.getUi().alert('講座データが見つかりませんでした。\nA列に「製造派遣」などのカテゴリ名が入っているか確認してください。');
+    return;
+  }
+
+  // 現在時刻を取得（シート名に使用）
+  const now = new Date();
+  const timeString = Utilities.formatDate(now, Session.getScriptTimeZone(), "MMdd_HHmm");
+  let logMessage = "【作成完了レポート】\n";
+
+  categories.forEach(catName => {
+    const data = categorizedRows[catName];
+    if (data.rows.length === 0) return;
+
+    // 並び替え（入職時→職能別→職種転換→階層別）
+    data.rows.sort((a, b) => {
+      const getPriority = (row) => {
+        const c = String(row[colCategory]);
+        if (c.includes('入職時')) return 1;
+        if (c.includes('職能別')) return 2;
+        if (c.includes('職種転換')) return 3;
+        if (c.includes('階層別')) return 4;
+        return 99;
+      };
+      return getPriority(a) - getPriority(b);
+    });
+
+    // 新しいシートを作成
+    const sheetName = '印刷用詳細_' + catName + '_' + timeString;
+    const targetSheet = ss.insertSheet();
+    targetSheet.setName(sheetName);
+
+    // ヘッダーとデータを結合（必要な6列分のみ）
+    const headerRow = [['項目番号', '訓練', '具体的な教育訓練', '時間数', '細部訓練項目（教育訓練の内容がわかる事項）', '・期待される教育訓練の効果・到達すべき知識、技量レベル・キャリアアップにつながる理由']];
+    const cleanRows = data.rows.map(r => r.slice(0, 6));
+    const finalOutput = headerRow.concat(cleanRows);
+
+    // 書き込み
+    const totalRows = finalOutput.length;
+    const targetRange = targetSheet.getRange(1, 1, totalRows, 6);
+    targetRange.setValues(finalOutput);
+
+    // レイアウト調整
+    targetSheet.setColumnWidth(1, 50);  targetSheet.setColumnWidth(2, 100);
+    targetSheet.setColumnWidth(3, 200); targetSheet.setColumnWidth(4, 80);
+    targetSheet.setColumnWidth(5, 300); targetSheet.setColumnWidth(6, 300);
+
+    targetRange.setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);
+
+    // 配置：A〜D列は中央、E〜F列は左（ヘッダーは中央）
+    targetSheet.getRange(1, 1, totalRows, 4).setHorizontalAlignment('center').setVerticalAlignment('middle');
+    targetSheet.getRange(1, 5, 1, 2).setHorizontalAlignment('center').setVerticalAlignment('middle');
+    if (totalRows >= 2) {
+      targetSheet.getRange(2, 5, totalRows - 1, 2).setHorizontalAlignment('left').setVerticalAlignment('middle');
+    }
+
+    // 罫線
+    targetSheet.getDataRange().setBorder(true, true, true, true, true, true);
+
+    logMessage += `・「${sheetName}」を作成（${data.rows.length}件）\n`;
+  });
+
+  SpreadsheetApp.getUi().alert(logMessage);
+}
+
+/**
+ * 【サブ機能1】
+ * 選択範囲の中だけ、入力ミス（DBにない講座）をチェックして赤く塗る
+ */
+function checkTypos() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const dbSheetName = 'DB';
+
+  // DBから正しい講座リストを取得
+  const dbSheet = ss.getSheetByName(dbSheetName);
+  if (!dbSheet) {
+    SpreadsheetApp.getUi().alert('エラー：「DB」シートが見つかりません。');
+    return;
+  }
+  const dbValues = dbSheet.getDataRange().getValues();
+  const validKeys = new Set();
+  const normalize = (str) => String(str).replace(/[ 　]/g, "").replace(/[「」『』\(\)（）\[\]]/g, "").trim();
+
+  // DBの全文字をキーワードとして登録（簡易マッチング用）
+  dbValues.forEach(row => {
+    row.forEach(cell => {
+       const name = normalize(cell);
+       if (name && name.length > 2) validKeys.add(name);
+    });
+  });
+
+  // 選択範囲を取得
+  let activeSheet = ss.getActiveSheet();
+  const selection = activeSheet.getSelection().getActiveRange();
+
+  if (!selection) {
+    SpreadsheetApp.getUi().alert('エラー：チェックしたい範囲（講座名の列など）を選択してから実行してください。');
+    return;
+  }
+
+  const values = selection.getValues();
+  const backgrounds = selection.getBackgrounds();
+
+  let errorCount = 0;
+
+  // 選択範囲を検査
+  for (let r = 0; r < values.length; r++) {
+    for (let c = 0; c < values[r].length; c++) {
+      const cellValue = String(values[r][c]).trim();
+
+      // 無視する言葉リスト
+      if (cellValue === "" || cellValue.includes("年目") || cellValue.includes("合計") || cellValue.includes("派遣") || cellValue.includes("作成") || cellValue.includes("時間") || cellValue.includes("内容")) {
+        backgrounds[r][c] = null; // 色をリセット
+        continue;
+      }
+
+      const cleanName = normalize(cellValue);
+      let found = false;
+      // DBリストと照合
+      for (const dbKey of validKeys) {
+        if (dbKey && cleanName.includes(dbKey)) {
+          found = true;
+          break;
+        }
+      }
+
+      if (found) {
+        backgrounds[r][c] = null; // 正しければ色なし
+      } else {
+        backgrounds[r][c] = '#FFCCCC'; // 間違いなら赤
+        errorCount++;
+      }
+    }
+  }
+
+  // 結果反映
+  selection.setBackgrounds(backgrounds);
+
+  if (errorCount > 0) {
+    SpreadsheetApp.getUi().alert('チェック完了：\n選択範囲内に ' + errorCount + '箇所の入力ミス（DBにない講座）が見つかりました。\n赤色のセルを確認してください。');
+  } else {
+    SpreadsheetApp.getUi().alert('OK！\n選択範囲内の講座名はすべてDBに登録されています。');
+  }
+}
+
+/**
+ * 【サブ機能2】
+ * 選択範囲内の「赤色」だけを消して元に戻す
+ */
+function resetRedCells() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const activeSheet = ss.getActiveSheet();
+  const selection = activeSheet.getSelection().getActiveRange();
+
+  if (!selection) {
+    SpreadsheetApp.getUi().alert('エラー：色を戻したい範囲を選択してから実行してください。');
+    return;
+  }
+
+  const backgrounds = selection.getBackgrounds();
+  let count = 0;
+
+  for (let r = 0; r < backgrounds.length; r++) {
+    for (let c = 0; c < backgrounds[r].length; c++) {
+      // 薄い赤色（#ffcccc）だけを狙い撃ちで消す
+      if (backgrounds[r][c] == '#ffcccc' || backgrounds[r][c] == '#FFCCCC') {
+        backgrounds[r][c] = null;
+        count++;
+      }
+    }
+  }
+
+  selection.setBackgrounds(backgrounds);
+
+  if (count > 0) {
+    SpreadsheetApp.getUi().alert('完了：\n選択範囲内の ' + count + '箇所の赤色を元に戻しました。');
+  } else {
+    SpreadsheetApp.getUi().alert('選択範囲内に、戻すべき赤色のセルはありませんでした。');
+  }
+}
+
+/**
+ * 【サブ機能3】
+ * 「印刷用詳細」で始まるシートをまとめて削除するお掃除機能
+ */
+function deleteResultSheets() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheets = ss.getSheets();
+  let count = 0;
+  const ui = SpreadsheetApp.getUi();
+  const response = ui.alert('確認', '「印刷用詳細」で始まる作成済みシートをすべて削除しますか？\n（この操作は取り消せません）', ui.ButtonSet.YES_NO);
+
+  if (response == ui.Button.YES) {
+    sheets.forEach(sheet => {
+      if (sheet.getName().startsWith('印刷用詳細')) {
+        ss.deleteSheet(sheet);
+        count++;
+      }
+    });
+    ui.alert(count + '枚のシートを削除しました。');
+  }
+}</pre>
             </div>
         </div>
 
@@ -309,6 +913,15 @@
             <a href="project03.html" class="btn">次のプロジェクト →</a>
         </div>
     </div>
+
+    <script>
+        function copyAppsScript() {
+            const text = document.getElementById('appsScript').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Apps Scriptコードをコピーしました！');
+            });
+        }
+    </script>
 </body>
 
 </html>
