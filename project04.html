@@ -21,8 +21,8 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            color: white;
+            background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+            color: #0f172a;
             padding: 2rem;
         }
 
@@ -33,12 +33,12 @@
 
         .breadcrumb {
             font-size: 0.9rem;
-            opacity: 0.9;
+            opacity: 0.8;
             margin-bottom: 1rem;
         }
 
         .breadcrumb a {
-            color: white;
+            color: #0f172a;
             text-decoration: none;
         }
 
@@ -59,7 +59,7 @@
 
         .header p {
             font-size: 1.05rem;
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
         .container {
@@ -78,100 +78,165 @@
 
         .section h2 {
             font-size: 1.4rem;
-            color: #fa709a;
+            color: #f59e0b;
             margin-bottom: 1.2rem;
             padding-bottom: 0.7rem;
             border-bottom: 2px solid #e2e8f0;
         }
 
-        .task-list {
-            list-style: none;
+        .section h3 {
+            font-size: 1.1rem;
+            color: #fbbf24;
+            margin: 1.5rem 0 1rem 0;
         }
 
-        .task-item {
-            padding: 0.7rem 0;
-            border-bottom: 1px solid #f1f5f9;
-            display: flex;
-            align-items: start;
-            gap: 0.75rem;
+        .evolution-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
         }
 
-        .task-item:last-child {
-            border-bottom: none;
+        .evolution-box strong {
+            color: #1e40af;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .task-icon {
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            background: #fa709a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.1rem;
+        .goal-box {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
         }
 
-        .badge {
-            display: inline-block;
-            background: #fa709a;
-            color: white;
-            padding: 0.4rem 0.9rem;
-            border-radius: 16px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin: 0.3rem 0.3rem 0.3rem 0;
+        .goal-box strong {
+            color: #059669;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .timeline {
-            margin-top: 1rem;
+        .feature-box {
+            background: #fff3cd;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
         }
 
-        .timeline-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px dashed #e2e8f0;
+        .feature-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .timeline-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .feature-box ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
         }
 
-        .timeline-marker {
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .timeline-content {
-            flex: 1;
-            padding-top: 0.2rem;
-        }
-
-        .timeline-title {
-            font-weight: 600;
-            color: #fa709a;
+        .feature-box li {
             margin-bottom: 0.3rem;
         }
 
-        .timeline-desc {
+        .candidate-box {
+            background: #f3e8ff;
+            border-left: 4px solid #a855f7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .candidate-box strong {
+            color: #7c3aed;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-list {
+            list-style: none;
+            counter-reset: flow-counter;
+        }
+
+        .flow-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            counter-increment: flow-counter;
+        }
+
+        .flow-item:last-child {
+            border-bottom: none;
+        }
+
+        .flow-number {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0f172a;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 0.2rem;
+        }
+
+        .flow-number::before {
+            content: counter(flow-counter);
+        }
+
+        .flow-content {
+            flex: 1;
+        }
+
+        .flow-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .flow-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .tool-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+        }
+
+        .tool-card h4 {
+            color: #f59e0b;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .tool-card p {
             font-size: 0.9rem;
             color: #64748b;
+        }
+
+        .tool-card .status {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
         }
 
         .nav-buttons {
@@ -183,7 +248,7 @@
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background: #fa709a;
+            background: #f59e0b;
             color: white;
             text-decoration: none;
             border-radius: 8px;
@@ -192,14 +257,12 @@
         }
 
         .btn:hover {
-            background: #fee140;
-            color: #0f172a;
+            background: #fbbf24;
             transform: translateY(-2px);
         }
 
         .btn-secondary {
             background: #64748b;
-            color: white;
         }
 
         .btn-secondary:hover {
@@ -225,91 +288,238 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="breadcrumb"><a href="index.html">← プロジェクト一覧に戻る</a></div>
+            <div class="breadcrumb">
+                <a href="index.html">← プロジェクト一覧に戻る</a>
+            </div>
             <div class="project-number">プロジェクト④</div>
             <h1>講座作成の一気通貫システム</h1>
-            <p>AI DeepResearch〜スライド生成までの自動化</p>
+            <p>Deep Research → スライド生成までの完全自動化</p>
         </div>
     </header>
 
     <div class="container">
         <div class="section">
             <h2>プロジェクト概要</h2>
-            <p>プロジェクト①では属人的にAIにプロンプトを投げて結果を次のAIに渡すという作業が発生します。本プロジェクトでは、このプロセス全体を一気通貫で自動化するシステムを構築します。</p>
+            <p>プロジェクト①で属人的（手作業）に行っていた「講座作成フロー」を、一気通貫で自動化するシステムを構築します。講座テーマを入力するだけで、Deep Research → スライド生成 →
+                デザイン適用まで自動実行し、進捗管理とエラーハンドリングも含めた運用可能なシステムを目指します。</p>
+
+            <div class="evolution-box">
+                <strong>🔄 プロジェクト①からの進化</strong>
+                <p>プロジェクト①では、ChatGPT・Gemini・Canvaを手動で連携していました。プロジェクト④では、この一連のプロセスを自動化し、ボタン1つで講座スライドを生成できるシステムを構築します。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>対象範囲</h2>
+            <p style="margin-bottom: 1.5rem;">以下のプロセスを一気通貫で自動化します。</p>
+
+            <div class="goal-box">
+                <strong>📋 自動化対象フロー</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>講座テーマ入力</strong> → Deep Research自動実行</li>
+                    <li><strong>Deep Research</strong> → 調査結果の構造化</li>
+                    <li><strong>スライド生成</strong> → Gemini Canvasでの自動生成</li>
+                    <li><strong>デザイン適用</strong> → Canva連携（希望要件）</li>
+                    <li><strong>進捗管理</strong> → ジョブ管理・ステータス追跡</li>
+                    <li><strong>エラーハンドリング</strong> → リトライ・ログ・通知</li>
+                </ul>
+            </div>
         </div>
 
         <div class="section">
             <h2>主な機能</h2>
-            <ul class="task-list">
-                <li class="task-item"><span class="task-icon">1</span>
-                    <div>講座テーマ入力によるAI DeepResearchの自動実行</div>
-                </li>
-                <li class="task-item"><span class="task-icon">2</span>
-                    <div>調査結果から講座構成の自動生成</div>
-                </li>
-                <li class="task-item"><span class="task-icon">3</span>
-                    <div>各スライドの内容自動生成</div>
-                </li>
-                <li class="task-item"><span class="task-icon">4</span>
-                    <div>スライドデザインの自動適用</div>
-                </li>
-                <li class="task-item"><span class="task-icon">5</span>
-                    <div>全工程の進捗管理とエラーハンドリング</div>
-                </li>
-            </ul>
+
+            <h3>1. Deep Researchの自動実行</h3>
+            <div class="feature-box">
+                <strong>🔍 講座テーマ入力により Deep Research を自動実行</strong>
+                <p>現時点では、<strong>ChatGPT（OpenAI API）</strong>が Deep Research に最適という前提で設計します。</p>
+                <ul>
+                    <li>講座テーマを入力</li>
+                    <li>ChatGPT（Deep Research機能）が自動で調査を実行</li>
+                    <li>調査結果を構造化データとして取得</li>
+                </ul>
+            </div>
+
+            <h3>2. 調査結果からスライド生成まで自動化</h3>
+            <div class="feature-box">
+                <strong>📊 Gemini Canvas（相当）でスライド内容生成</strong>
+                <p>次工程は、<strong>Gemini上のCanvas機能</strong>を使って、各スライドの内容生成まで行わせたいという方針です。</p>
+                <ul>
+                    <li>Deep Research結果を入力</li>
+                    <li>Gemini Canvas機能でスライド構造を自動生成</li>
+                    <li>各スライドのタイトル・本文・レイアウトを決定</li>
+                </ul>
+            </div>
+
+            <h3>3. スライドデザインの自動適用</h3>
+            <div class="candidate-box">
+                <strong>🎨 Canva連携（希望要件・実現可能性調査中）</strong>
+                <p>Canva（外部デザイン）側へ連携して自動適用できるなら実施したい、という希望要件として位置づけます。</p>
+                <ul>
+                    <li>Canva APIの調査・検証が必要</li>
+                    <li>デザインテンプレートの自動適用</li>
+                    <li>外部連携の制約・制限の把握</li>
+                </ul>
+            </div>
+
+            <h3>4. 全工程の進捗管理とエラーハンドリング</h3>
+            <div class="feature-box">
+                <strong>⚙️ 運用に耐える管理機能</strong>
+                <p>単なる自動化ではなく、業務レベルで運用できる品質を確保します。</p>
+                <ul>
+                    <li><strong>ジョブ管理</strong>: 各工程のステータス追跡</li>
+                    <li><strong>リトライ機能</strong>: 失敗時の自動再実行</li>
+                    <li><strong>失敗時の通知</strong>: エラー発生時のアラート</li>
+                    <li><strong>ログ記録</strong>: 全工程の履歴保存</li>
+                    <li><strong>途中再開</strong>: 中断したジョブの再開機能</li>
+                </ul>
+            </div>
         </div>
 
         <div class="section">
-            <h2>技術スタック(案)</h2>
-            <p style="margin-bottom: 1rem;">以下の技術スタックを提案しますが、インターンの方のご経験やご希望に応じて調整可能です。</p>
-            <div>
-                <span class="badge">Python</span>
-                <span class="badge">LangChain</span>
-                <span class="badge">OpenAI API</span>
-                <span class="badge">Canva API</span>
-                <span class="badge">FastAPI (Webインターフェース)</span>
+            <h2>技術スタック（推奨候補）</h2>
+            <p style="margin-bottom: 1.5rem;">現時点で確定はしていないため、推奨候補として複数案を提示します。</p>
+
+            <div class="tool-card">
+                <h4>OpenAI API（ChatGPT）</h4>
+                <p><strong>用途:</strong> Deep Researchの自動実行の中核候補</p>
+                <p><strong>役割:</strong> 講座テーマから詳細な調査結果を生成</p>
+                <div class="status">候補（Deep Research最適）</div>
+            </div>
+
+            <div class="tool-card">
+                <h4>Gemini API</h4>
+                <p><strong>用途:</strong> スライド生成（Canvas相当）を自動化する候補</p>
+                <p><strong>役割:</strong> 調査結果からスライド構造を自動生成</p>
+                <div class="status">候補（可能性検討）</div>
+            </div>
+
+            <div class="tool-card">
+                <h4>Canva API</h4>
+                <p><strong>用途:</strong> デザイン適用の自動化</p>
+                <p><strong>役割:</strong> スライドへのデザインテンプレート適用</p>
+                <div class="status">希望要件（実現可能性・制約調査が必要）</div>
+            </div>
+
+            <div class="tool-card">
+                <h4>実装言語・基盤</h4>
+                <p><strong>候補:</strong> Python、Node.js など</p>
+                <p><strong>フレームワーク候補:</strong> LangChain、FastAPI、Flask など</p>
+                <p><strong>ジョブ管理:</strong> Celery、Bull、カスタム実装 など</p>
+                <div class="status">候補提示（断定しない）</div>
+            </div>
+
+            <div class="candidate-box">
+                <strong>⚠️ 調査・検証が必要な項目</strong>
+                <ul>
+                    <li>外部連携（Canva側）の実現可能性・制約調査</li>
+                    <li>Gemini API の Canvas相当機能の自動化可否</li>
+                    <li>各APIの料金・制限・レート制限の確認</li>
+                    <li>エラーハンドリング・リトライロジックの設計</li>
+                </ul>
             </div>
         </div>
 
         <div class="section">
             <h2>ざっくりタスクリスト</h2>
-            <p style="margin-bottom: 1rem;">以下のステップで段階的に進めていく想定です。各ステップの詳細は協議しながら決定します。</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">現行フローの分析</div>
-                        <div class="timeline-desc">手動プロセスの可視化、ボトルネック特定</div>
+            <p style="margin-bottom: 1.5rem;">以下のステップで段階的に進めていく想定です。</p>
+
+            <ol class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">講座テーマ入力（UI/フォーム/API）</div>
+                        <div class="flow-desc">講座テーマを入力するインターフェースを構築（Webフォーム、API、CLI等）</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">パイプライン設計</div>
-                        <div class="timeline-desc">各工程の自動連携ロジック構築</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Deep Research自動実行（ChatGPT想定）</div>
+                        <div class="flow-desc">OpenAI APIを使用して、講座テーマからDeep Researchを自動実行</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">AI統合・自動化実装</div>
-                        <div class="timeline-desc">DeepResearch〜スライド生成の連携</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">生成物の正規化（スライド構造への変換）</div>
+                        <div class="flow-desc">Deep Research結果を、スライド生成に適した構造化データに変換</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">UI/UX開発</div>
-                        <div class="timeline-desc">簡単操作のWebインターフェース作成</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Gemini Canvas（相当）でスライド生成</div>
+                        <div class="flow-desc">Gemini APIを使用して、構造化データからスライド内容を自動生成</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">5</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">運用テスト・改善</div>
-                        <div class="timeline-desc">実際の講座で検証、精度向上</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">デザイン適用（Canva連携が可能なら）</div>
+                        <div class="flow-desc">Canva APIの可能性を調査し、実現可能であればデザインテンプレートを自動適用</div>
                     </div>
-                </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">進捗管理（ステータス、ジョブ管理、再実行、途中再開）</div>
+                        <div class="flow-desc">各工程のステータス追跡、ジョブキュー管理、中断・再開機能を実装</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">エラーハンドリング（ログ、通知、リトライ、フェイルセーフ）</div>
+                        <div class="flow-desc">エラー検知、ログ記録、通知機能、自動リトライ、フェイルセーフ機構を実装</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">最終成果物の出力（Googleスライド/PDFなど）</div>
+                        <div class="flow-desc">完成したスライドをGoogleスライド形式またはPDFで出力</div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>実装の優先順位</h2>
+
+            <div class="goal-box">
+                <strong>🎯 フェーズ1: 基本自動化</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>講座テーマ入力 → ChatGPT Deep Research → 構造化</li>
+                    <li>基本的な進捗管理とログ記録</li>
+                    <li>Gemini API でのスライド生成（手動確認）</li>
+                </ul>
+            </div>
+
+            <div class="feature-box">
+                <strong>⚙️ フェーズ2: 高度な管理機能</strong>
+                <ul>
+                    <li>ジョブキュー管理システムの導入</li>
+                    <li>エラーハンドリング・リトライ機構</li>
+                    <li>途中再開機能</li>
+                    <li>通知機能（メール・Slack等）</li>
+                </ul>
+            </div>
+
+            <div class="candidate-box">
+                <strong>🔮 フェーズ3: 外部連携（Canva等）</strong>
+                <ul>
+                    <li>Canva API の調査・検証</li>
+                    <li>デザインテンプレート自動適用</li>
+                    <li>実現可能性に応じて実装判断</li>
+                </ul>
             </div>
         </div>
 
