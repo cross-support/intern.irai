@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="クロスリンク様 ラーニング事業部インターン向け手順書 - プロジェクト一覧">
+    <title>インターン手順書 | クロスリンク ラーニング事業部</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro h2 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .note-box {
+            background: #fff3cd;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .note-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-card:nth-child(2) .project-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .project-card:nth-child(3) .project-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .project-card:nth-child(4) .project-header {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .project-card:nth-child(5) .project-header {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .project-card:nth-child(6) .project-header {
+            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+        }
+
+        .project-number {
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-summary {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>インターン手順書</h1>
+        <p>クロスリンク ラーニング事業部 | 6つのプロジェクト</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>📋 はじめに</h2>
+            <p>この手順書は、ラーニング事業部で進行中の6つのプロジェクトについて、技術仕様、設計書、タスクリストをまとめたものです。</p>
+
+            <div class="note-box">
+                <strong>📌 重要事項</strong>
+                <p>本資料に記載の技術仕様はあくまで<strong>案</strong>として提示しています。詳細については、インターンの方と協議しながら進めていきます。</p>
+            </div>
+        </div>
+
+        <div class="project-grid">
+            <a href="project01.html" class="project-card">
+                <div class="project-header">
+                    <div class="project-number">プロジェクト①</div>
+                    <h3 class="project-title">CanvaとAIを活用した<br>コンテンツ制作</h3>
+                    <p class="project-subtitle">スライド・音声字幕付き動画の自動生成</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-summary">講座計画表に基づいて、スライドと音声字幕付きの動画を効率的に作成するフローを構築。AIを活用してコンテンツ制作の属人性を減らします。</p>
+                </div>
+            </a>
+
+            <a href="project02.html" class="project-card">
+                <div class="project-header">
+                    <div class="project-number">プロジェクト②</div>
+                    <h3 class="project-title">顧客用資料作成の自動化</h3>
+                    <p class="project-subtitle">複数Excelファイルからの自動マージ</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-summary">2つのExcelファイルから必要な項目だけを抽出し、1つの統合ファイルを自動生成。手作業による転記ミスをなくします。</p>
+                </div>
+            </a>
+
+            <a href="project03.html" class="project-card">
+                <div class="project-header">
+                    <div class="project-number">プロジェクト③</div>
+                    <h3 class="project-title">顧客へのマニュアル<br>動画制作</h3>
+                    <p class="project-subtitle">AIアバター・自動編集による説明動画</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-summary">システムの使い方を説明する動画を撮影し、AIアバターを使って説明を追加。余計な間や言葉を削除し、顧客に提供できる動画を作成。</p>
+                </div>
+            </a>
+
+            <a href="project04.html" class="project-card">
+                <div class="project-header">
+                    <div class="project-number">プロジェクト④</div>
+                    <h3 class="project-title">講座作成の<br>一気通貫システム</h3>
+                    <p class="project-subtitle">DeepResearch〜スライド生成までの自動化</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-summary">プロジェクト①で発生する属人的なAI操作を自動化。DeepResearchからスライド生成までを一気通貫で処理するシステムを構築。</p>
+                </div>
+            </a>
+
+            <a href="project05.html" class="project-card">
+                <div class="project-header">
+                    <div class="project-number">プロジェクト⑤</div>
+                    <h3 class="project-title">音声スライド生成<br>システム</h3>
+                    <p class="project-subtitle">NoLangをベンチマークとした自社開発</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-summary">テキスト、PDF、Webコンテンツから高品質な動画を自動生成できるシステムを自前で開発。NoLangを参考にビジネス資料の動画化を実現。</p>
+                </div>
+            </a>
+
+            <a href="project06.html" class="project-card">
+                <div class="project-header">
+                    <div class="project-number">プロジェクト⑥</div>
+                    <h3 class="project-title">既存講座の多言語化</h3>
+                    <p class="project-subtitle">26講座の翻訳・ローカライズ自動化</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-summary">既存の26講座を多言語対応。AIによる翻訳と人手によるレビューを組み合わせ、効率的かつ高品質なローカライゼーションを実現。</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 クロスリンク株式会社 ラーニング事業部</p>
+    </footer>
+</body>
+
+</html>

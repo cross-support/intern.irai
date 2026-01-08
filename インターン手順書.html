@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="クロスリンク様 ラーニング事業部インターン向け手順書 - 6つのプロジェクト概要と技術仕様">
+    <title>インターン手順書 | クロスリンク ラーニング事業部</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #6366f1;
+            --color-primary-dark: #4f46e5;
+            --color-secondary: #8b5cf6;
+            --color-accent: #ec4899;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-bg-dark: #0f172a;
+            --color-bg-light: #f8fafc;
+            --color-surface: #1e293b;
+            --color-surface-light: #ffffff;
+            --color-text-primary: #0f172a;
+            --color-text-secondary: #64748b;
+            --color-text-light: #e2e8f0;
+            --color-border: #e2e8f0;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--color-bg-light);
+            color: var(--color-text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+            50% { transform: scale(1.1) rotate(180deg); opacity: 0.8; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro-section {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-border);
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .intro-section h2 {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .intro-section h2::before {
+            content: '📋';
+            font-size: 2.5rem;
+        }
+
+        .note-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #fff8e1 100%);
+            border-left: 5px solid var(--color-warning);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .note-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-border);
+            transition: var(--transition-base);
+            animation: slideInUp 0.8s ease-out both;
+            position: relative;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+
+        .project-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .project-number {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 1.2rem;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .task-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            transition: var(--transition-base);
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-item:hover {
+            background: #f8fafc;
+            padding-left: 0.5rem;
+            margin-left: -0.5rem;
+            border-radius: 8px;
+        }
+
+        .task-icon {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.1rem;
+        }
+
+        .content-box {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .badge-info {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+        }
+
+        .badge-success {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(67, 233, 123, 0.3);
+        }
+
+        .timeline {
+            margin-top: 1rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--color-border);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-marker {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 0.3rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+
+        .footer {
+            background: var(--color-surface);
+            color: var(--color-text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .intro-section {
+                padding: 1.5rem;
+            }
+        }
+
+        .reference-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(250, 112, 154, 0.3);
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .course-item {
+            background: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            font-size: 0.9rem;
+            transition: var(--transition-base);
+        }
+
+        .course-item:hover {
+            background: #f8fafc;
+            border-color: var(--color-primary);
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>インターン手順書</h1>
+            <p>クロスリンク ラーニング事業部 | 6つのプロジェクト概要</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="intro-section">
+            <h2>はじめに</h2>
+            <p>この手順書は、ラーニング事業部で進行中の6つのプロジェクトについて、技術仕様、設計書、タスクリストをまとめたものです。</p>
+
+            <div class="note-box">
+                <strong>📌 重要事項</strong>
+                <p>本資料に記載の技術仕様はあくまで<strong>案</strong>として提示しています。詳細については、インターンの方と協議しながら進めていきます。ご意見やアイデアを積極的にお寄せください。</p>
+            </div>
+        </div>
+
+        <div class="project-grid">
+            <!-- プロジェクト①: CanvaとAIを活用したコンテンツ制作 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">プロジェクト①</div>
+                    <h3 class="project-title">CanvaとAIを活用したコンテンツ制作</h3>
+                    <p class="project-subtitle">スライド・音声字幕付き動画の自動生成システム</p>
+                </div>
+                <div class="project-body">
+                    <div class="section">
+                        <div class="reference-badge">
+                            📁 参照: クロスリンク_コンテンツ制作フロー<br>
+                            📊 データ: R7.11 講座計画表.csv
+                        </div>
+                        <div class="section-title">プロジェクト概要</div>
+                        <p>講座計画表に基づいて、スライドと音声字幕付きの動画を効率的に作成するフローを構築します。AIを活用してコンテンツ制作の属人性を減らし、規格化された高品質な教材を量産できる環境を目指します。</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">主な機能</div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <span class="task-icon">1</span>
+                                <div>CSV講座計画表からのデータ読み込み機能</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">2</span>
+                                <div>AIによるスライド内容の自動生成</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">3</span>
+                                <div>Canva APIを活用したスライドデザイン生成</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">4</span>
+                                <div>音声合成による説明ナレーションの作成</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">5</span>
+                                <div>字幕自動生成と動画エクスポート機能</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">技術スタック(案)</div>
+                        <div>
+                            <span class="badge badge-primary">Python</span>
+                            <span class="badge badge-primary">Canva API</span>
+                            <span class="badge badge-primary">OpenAI API</span>
+                            <span class="badge badge-info">Google TTS</span>
+                            <span class="badge badge-info">FFmpeg</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">ざっくりタスクリスト</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">要件定義とワークフロー設計</div>
+                                    <div class="timeline-desc">現状フローの確認、AIプロンプト設計</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">CSV読み込み・データ処理</div>
+                                    <div class="timeline-desc">計画表のパース、データ構造の整理</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">スライド自動生成機能</div>
+                                    <div class="timeline-desc">Canva API連携、テンプレート作成</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">音声・字幕・動画生成</div>
+                                    <div class="timeline-desc">音声合成、字幕付与、動画エクスポート</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">5</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">テスト・改善・運用化</div>
+                                    <div class="timeline-desc">品質チェック、フィードバック反映</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- プロジェクト②: 顧客用資料作成の自動化 -->
+            <div class="project-card">
+                <div class="project-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="project-number">プロジェクト②</div>
+                    <h3 class="project-title">顧客用資料作成の自動化</h3>
+                    <p class="project-subtitle">複数Excelファイルからの自動マージシステム</p>
+                </div>
+                <div class="project-body">
+                    <div class="section">
+                        <div class="section-title">プロジェクト概要</div>
+                        <p>2つのExcelファイルから必要な項目だけを抽出し、1つの統合ファイルを自動生成するシステムです。手作業による転記ミスをなくし、業務時間を大幅に削減します。</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">主な機能</div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <span class="task-icon">1</span>
+                                <div>複数Excelファイルの自動読み込み</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">2</span>
+                                <div>必要項目の抽出と整形</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">3</span>
+                                <div>データマッピングと統合処理</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">4</span>
+                                <div>テンプレートに基づいた出力ファイル生成</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">5</span>
+                                <div>バリデーション・エラーチェック機能</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">技術スタック(案)</div>
+                        <div>
+                            <span class="badge badge-primary">Python</span>
+                            <span class="badge badge-primary">pandas</span>
+                            <span class="badge badge-primary">openpyxl</span>
+                            <span class="badge badge-info">ExcelマクロVBA</span>
+                            <span class="badge badge-success">データ検証ライブラリ</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">ざっくりタスクリスト</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">入出力ファイル構造の把握</div>
+                                    <div class="timeline-desc">現状の2つのExcelファイル内容確認</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">マッピングロジック設計</div>
+                                    <div class="timeline-desc">どの項目をどう組み合わせるか定義</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">自動化スクリプト開発</div>
+                                    <div class="timeline-desc">読込・抽出・統合処理の実装</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">テスト・改善</div>
+                                    <div class="timeline-desc">サンプルデータで動作確認</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- プロジェクト③: 顧客へのマニュアル動画制作 -->
+            <div class="project-card">
+                <div class="project-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="project-number">プロジェクト③</div>
+                    <h3 class="project-title">顧客へのマニュアル動画制作</h3>
+                    <p class="project-subtitle">AIアバター・自動編集による説明動画作成</p>
+                </div>
+                <div class="project-body">
+                    <div class="section">
+                        <div class="section-title">プロジェクト概要</div>
+                        <p>システムの使い方を説明する動画を撮影し、AIアバターを使って説明を追加。余計な間や言葉を削除し、顧客に提供できる高品質な動画マニュアルを作成します。</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">主な機能</div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <span class="task-icon">1</span>
+                                <div>画面収録動画の自動インポート</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">2</span>
+                                <div>AIによる無音・冗長部分の自動検出・カット</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">3</span>
+                                <div>AIアバターによる音声ナレーション追加</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">4</span>
+                                <div>字幕の自動生成と表示</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">5</span>
+                                <div>顧客向けフォーマットでのエクスポート</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">技術スタック(案)</div>
+                        <div>
+                            <span class="badge badge-primary">DaVinci Resolve</span>
+                            <span class="badge badge-primary">Descript</span>
+                            <span class="badge badge-info">HeyGen (AIアバター)</span>
+                            <span class="badge badge-info">Whisper (字幕生成)</span>
+                            <span class="badge badge-success">Python (自動化)</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">ざっくりタスクリスト</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">動画制作フロー設計</div>
+                                    <div class="timeline-desc">編集工程の可視化と自動化範囲の決定</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">自動編集機能の開発</div>
+                                    <div class="timeline-desc">無音カット、冗長部分削除の実装</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">AIアバター統合</div>
+                                    <div class="timeline-desc">ナレーション生成と動画への合成</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">品質確認・改善</div>
+                                    <div class="timeline-desc">サンプル動画で検証、調整</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- プロジェクト④: 講座作成の一気通貫システム -->
+            <div class="project-card">
+                <div class="project-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="project-number">プロジェクト④</div>
+                    <h3 class="project-title">講座作成の一気通貫システム</h3>
+                    <p class="project-subtitle">AI DeepResearch〜スライド生成までの自動化</p>
+                </div>
+                <div class="project-body">
+                    <div class="section">
+                        <div class="section-title">プロジェクト概要</div>
+                        <p>①のプロジェクトでは属人的にAIにプロンプトを投げて結果を次のAIに渡すという作業が発生します。本プロジェクトでは、このプロセス全体を一気通貫で自動化するシステムを構築します。</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">主な機能</div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <span class="task-icon">1</span>
+                                <div>講座テーマ入力によるAI DeepResearchの自動実行</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">2</span>
+                                <div>調査結果から講座構成の自動生成</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">3</span>
+                                <div>各スライドの内容自動生成</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">4</span>
+                                <div>スライドデザインの自動適用</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">5</span>
+                                <div>全工程の進捗管理とエラーハンドリング</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">技術スタック(案)</div>
+                        <div>
+                            <span class="badge badge-primary">Python</span>
+                            <span class="badge badge-primary">LangChain</span>
+                            <span class="badge badge-primary">OpenAI API</span>
+                            <span class="badge badge-info">Canva API</span>
+                            <span class="badge badge-success">FastAPI (Webインターフェース)</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">ざっくりタスクリスト</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">現行フローの分析</div>
+                                    <div class="timeline-desc">手動プロセスの可視化、ボトルネック特定</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">パイプライン設計</div>
+                                    <div class="timeline-desc">各工程の自動連携ロジック構築</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">AI統合・自動化実装</div>
+                                    <div class="timeline-desc">DeepResearch〜スライド生成の連携</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">UI/UX開発</div>
+                                    <div class="timeline-desc">簡単操作のWebインターフェース作成</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">5</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">運用テスト・改善</div>
+                                    <div class="timeline-desc">実際の講座で検証、精度向上</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- プロジェクト⑤: 音声スライド生成システム -->
+            <div class="project-card">
+                <div class="project-header" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="project-number">プロジェクト⑤</div>
+                    <h3 class="project-title">音声スライド生成システム</h3>
+                    <p class="project-subtitle">NoLangをベンチマークとした自社開発</p>
+                </div>
+                <div class="project-body">
+                    <div class="section">
+                        <div class="section-title">プロジェクト概要</div>
+                        <p>テキスト、PDF、Webコンテンツから高品質な動画を自動生成できるシステムを自前で開発します。ベンチマークとしてNoLangを参考にし、ビジネス資料の動画化を目的とします。</p>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">主な機能</div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <span class="task-icon">1</span>
+                                <div>テキスト・PDF・WebからのコンテンツインポートE</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">2</span>
+                                <div>AIによるコンテンツ理解と構造化</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">3</span>
+                                <div>スライド自動生成とレイアウト最適化</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">4</span>
+                                <div>音声ナレーション自動生成</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">5</span>
+                                <div>動画エンコード・エクスポート</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">技術スタック(案)</div>
+                        <div>
+                            <span class="badge badge-primary">Python</span>
+                            <span class="badge badge-primary">React (フロントエンド)</span>
+                            <span class="badge badge-primary">OpenAI API</span>
+                            <span class="badge badge-info">PDF解析ライブラリ</span>
+                            <span class="badge badge-info">TTS Engine</span>
+                            <span class="badge badge-success">FFmpeg</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">ざっくりタスクリスト</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">NoLang調査・ベンチマーク分析</div>
+                                    <div class="timeline-desc">機能・UI・技術スタックの調査</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">コア機能設計</div>
+                                    <div class="timeline-desc">コンテンツ理解・スライド生成ロジック</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">プロトタイプ開発</div>
+                                    <div class="timeline-desc">MVP (最小機能版) の実装</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">フロントエンド・UI構築</div>
+                                    <div class="timeline-desc">使いやすいインターフェースの設計</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">5</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">テスト・改善・展開</div>
+                                    <div class="timeline-desc">実際の資料で検証、機能拡張</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- プロジェクト⑥: 既存講座の多言語化 -->
+            <div class="project-card">
+                <div class="project-header" style="background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);">
+                    <div class="project-number">プロジェクト⑥</div>
+                    <h3 class="project-title">既存講座の多言語化</h3>
+                    <p class="project-subtitle">26講座の翻訳・ローカライズ自動化</p>
+                </div>
+                <div class="project-body">
+                    <div class="section">
+                        <div class="section-title">プロジェクト概要</div>
+                        <p>既存の26講座を多言語対応させるプロジェクトです。AIによる翻訳と人手によるレビューを組み合わせ、効率的かつ高品質なローカライゼーションを実現します。</p>
+                        <div class="content-box" style="margin-top: 1rem;">
+                            <strong>📌 Note:</strong> 詳細はやましゅう様のタスクとも連携しますので、この手順書では概要のみ記載しています。
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">対象講座(26講座)</div>
+                        <div class="course-list">
+                            <div class="course-item">ヒューマンスキルⅠ</div>
+                            <div class="course-item">ヒューマンスキルⅡ</div>
+                            <div class="course-item">ものづくり教育【初級】Ⅰ</div>
+                            <div class="course-item">ものづくり確認テスト【初級】Ⅰ</div>
+                            <div class="course-item">ものづくり教育【初級】Ⅱ</div>
+                            <div class="course-item">ものづくり確認テスト【初級】Ⅱ</div>
+                            <div class="course-item">ものづくり教育【中級】Ⅰ</div>
+                            <div class="course-item">ものづくり確認テスト【中級】Ⅰ</div>
+                            <div class="course-item">ものづくり教育【中級】Ⅱ</div>
+                            <div class="course-item">ものづくり確認テスト【中級】Ⅱ</div>
+                            <div class="course-item">ものづくり教育【上級】Ⅰ</div>
+                            <div class="course-item">ものづくり確認テスト【上級】Ⅰ</div>
+                            <div class="course-item">ものづくり教育【上級】Ⅱ</div>
+                            <div class="course-item">ものづくり確認テスト【上級】Ⅱ</div>
+                            <div class="course-item">品質管理プログラム【初級】Ⅰ</div>
+                            <div class="course-item">品質管理確認テスト【初級】Ⅰ</div>
+                            <div class="course-item">品質管理プログラム【初級】Ⅱ</div>
+                            <div class="course-item">品質管理確認テスト【初級】Ⅱ</div>
+                            <div class="course-item">現場リーダー教育【初級】①</div>
+                            <div class="course-item">現場リーダー確認テスト【初級】①</div>
+                            <div class="course-item">現場リーダー教育【初級】②</div>
+                            <div class="course-item">現場リーダー確認テスト【初級】②</div>
+                            <div class="course-item">現場リーダー教育【中級】</div>
+                            <div class="course-item">現場リーダー確認テスト【中級】</div>
+                            <div class="course-item">現場リーダー教育【上級】</div>
+                            <div class="course-item">現場リーダー確認テスト【上級】</div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">主な機能</div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <span class="task-icon">1</span>
+                                <div>講座コンテンツの一括抽出</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">2</span>
+                                <div>AIによる初期翻訳(複数言語対応)</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">3</span>
+                                <div>専門用語の統一管理</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">4</span>
+                                <div>レビュー・校正ワークフロー</div>
+                            </li>
+                            <li class="task-item">
+                                <span class="task-icon">5</span>
+                                <div>翻訳済みコンテンツの再インポート</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">技術スタック(案)</div>
+                        <div>
+                            <span class="badge badge-primary">OpenAI API (翻訳)</span>
+                            <span class="badge badge-primary">Google Translate API</span>
+                            <span class="badge badge-info">用語集管理DB</span>
+                            <span class="badge badge-success">レビューツール</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">ざっくりタスクリスト</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">対象言語・講座の整理</div>
+                                    <div class="timeline-desc">翻訳対象言語の決定、優先順位付け</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">翻訳パイプライン構築</div>
+                                    <div class="timeline-desc">自動翻訳〜レビュー〜再インポート</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">専門用語集の作成</div>
+                                    <div class="timeline-desc">業界用語の翻訳統一</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">パイロット翻訳</div>
+                                    <div class="timeline-desc">1〜2講座でテスト実施</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">5</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">全講座展開</div>
+                                    <div class="timeline-desc">26講座の翻訳完了と品質管理</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 クロスリンク株式会社 ラーニング事業部 | インターン手順書</p>
+    </footer>
+</body>
+</html>

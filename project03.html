@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト③ 顧客へのマニュアル動画制作 | インターン手順書</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-number {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            color: #00f2fe;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.7rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-item {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-icon {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            background: #00f2fe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #00f2fe;
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.3rem 0.3rem 0.3rem 0;
+        }
+
+        .timeline {
+            margin-top: 1rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-marker {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 0.2rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: #00f2fe;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #00f2fe;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #4facfe;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #64748b;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="breadcrumb"><a href="index.html">← プロジェクト一覧に戻る</a></div>
+            <div class="project-number">プロジェクト③</div>
+            <h1>顧客へのマニュアル動画制作</h1>
+            <p>AIアバター・自動編集による説明動画作成</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>プロジェクト概要</h2>
+            <p>システムの使い方を説明する動画を撮影し、AIアバターを使って説明を追加。余計な間や言葉を削除し、顧客に提供できる高品質な動画マニュアルを作成します。</p>
+        </div>
+
+        <div class="section">
+            <h2>主な機能</h2>
+            <ul class="task-list">
+                <li class="task-item"><span class="task-icon">1</span>
+                    <div>画面収録動画の自動インポート</div>
+                </li>
+                <li class="task-item"><span class="task-icon">2</span>
+                    <div>AIによる無音・冗長部分の自動検出・カット</div>
+                </li>
+                <li class="task-item"><span class="task-icon">3</span>
+                    <div>AIアバターによる音声ナレーション追加</div>
+                </li>
+                <li class="task-item"><span class="task-icon">4</span>
+                    <div>字幕の自動生成と表示</div>
+                </li>
+                <li class="task-item"><span class="task-icon">5</span>
+                    <div>顧客向けフォーマットでのエクスポート</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>技術スタック(案)</h2>
+            <p style="margin-bottom: 1rem;">以下の技術スタックを提案しますが、インターンの方のご経験やご希望に応じて調整可能です。</p>
+            <div>
+                <span class="badge">DaVinci Resolve</span>
+                <span class="badge">Descript</span>
+                <span class="badge">HeyGen (AIアバター)</span>
+                <span class="badge">Whisper (字幕生成)</span>
+                <span class="badge">Python (自動化)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ざっくりタスクリスト</h2>
+            <p style="margin-bottom: 1rem;">以下のステップで段階的に進めていく想定です。各ステップの詳細は協議しながら決定します。</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">動画制作フロー設計</div>
+                        <div class="timeline-desc">編集工程の可視化と自動化範囲の決定</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">自動編集機能の開発</div>
+                        <div class="timeline-desc">無音カット、冗長部分削除の実装</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">AIアバター統合</div>
+                        <div class="timeline-desc">ナレーション生成と動画への合成</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">品質確認・改善</div>
+                        <div class="timeline-desc">サンプル動画で検証、調整</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="project02.html" class="btn btn-secondary">← 前のプロジェクト</a>
+            <a href="project04.html" class="btn">次のプロジェクト →</a>
+        </div>
+    </div>
+</body>
+
+</html>

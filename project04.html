@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト④ 講座作成の一気通貫システム | インターン手順書</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-number {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            color: #fa709a;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.7rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-item {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-icon {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            background: #fa709a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #fa709a;
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.3rem 0.3rem 0.3rem 0;
+        }
+
+        .timeline {
+            margin-top: 1rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-marker {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 0.2rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: #fa709a;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #fa709a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #fee140;
+            color: #0f172a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #64748b;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="breadcrumb"><a href="index.html">← プロジェクト一覧に戻る</a></div>
+            <div class="project-number">プロジェクト④</div>
+            <h1>講座作成の一気通貫システム</h1>
+            <p>AI DeepResearch〜スライド生成までの自動化</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>プロジェクト概要</h2>
+            <p>プロジェクト①では属人的にAIにプロンプトを投げて結果を次のAIに渡すという作業が発生します。本プロジェクトでは、このプロセス全体を一気通貫で自動化するシステムを構築します。</p>
+        </div>
+
+        <div class="section">
+            <h2>主な機能</h2>
+            <ul class="task-list">
+                <li class="task-item"><span class="task-icon">1</span>
+                    <div>講座テーマ入力によるAI DeepResearchの自動実行</div>
+                </li>
+                <li class="task-item"><span class="task-icon">2</span>
+                    <div>調査結果から講座構成の自動生成</div>
+                </li>
+                <li class="task-item"><span class="task-icon">3</span>
+                    <div>各スライドの内容自動生成</div>
+                </li>
+                <li class="task-item"><span class="task-icon">4</span>
+                    <div>スライドデザインの自動適用</div>
+                </li>
+                <li class="task-item"><span class="task-icon">5</span>
+                    <div>全工程の進捗管理とエラーハンドリング</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>技術スタック(案)</h2>
+            <p style="margin-bottom: 1rem;">以下の技術スタックを提案しますが、インターンの方のご経験やご希望に応じて調整可能です。</p>
+            <div>
+                <span class="badge">Python</span>
+                <span class="badge">LangChain</span>
+                <span class="badge">OpenAI API</span>
+                <span class="badge">Canva API</span>
+                <span class="badge">FastAPI (Webインターフェース)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ざっくりタスクリスト</h2>
+            <p style="margin-bottom: 1rem;">以下のステップで段階的に進めていく想定です。各ステップの詳細は協議しながら決定します。</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">現行フローの分析</div>
+                        <div class="timeline-desc">手動プロセスの可視化、ボトルネック特定</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">パイプライン設計</div>
+                        <div class="timeline-desc">各工程の自動連携ロジック構築</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">AI統合・自動化実装</div>
+                        <div class="timeline-desc">DeepResearch〜スライド生成の連携</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">UI/UX開発</div>
+                        <div class="timeline-desc">簡単操作のWebインターフェース作成</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">運用テスト・改善</div>
+                        <div class="timeline-desc">実際の講座で検証、精度向上</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="project03.html" class="btn btn-secondary">← 前のプロジェクト</a>
+            <a href="project05.html" class="btn">次のプロジェクト →</a>
+        </div>
+    </div>
+</body>
+
+</html>

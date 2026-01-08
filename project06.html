@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト⑥ 既存講座の多言語化 | インターン手順書</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .project-number {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            color: #ee0979;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.7rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .note-box {
+            background: #fff3cd;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .note-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-item {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-icon {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            background: #ee0979;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ee0979;
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.3rem 0.3rem 0.3rem 0;
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .course-item {
+            background: #f8fafc;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        .timeline {
+            margin-top: 1rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-marker {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 0.2rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: #ee0979;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #ee0979;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ff6a00;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #64748b;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .course-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="breadcrumb"><a href="index.html">← プロジェクト一覧に戻る</a></div>
+            <div class="project-number">プロジェクト⑥</div>
+            <h1>既存講座の多言語化</h1>
+            <p>26講座の翻訳・ローカライズ自動化</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>プロジェクト概要</h2>
+            <p>既存の26講座を多言語対応させるプロジェクトです。AIによる翻訳と人手によるレビューを組み合わせ、効率的かつ高品質なローカライゼーションを実現します。</p>
+
+            <div class="note-box">
+                <strong>📌 Note</strong>
+                <p>詳細はやましゅう様のタスクとも連携しますので、この手順書では概要のみ記載しています。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>対象講座(26講座)</h2>
+            <div class="course-list">
+                <div class="course-item">ヒューマンスキルⅠ</div>
+                <div class="course-item">ヒューマンスキルⅡ</div>
+                <div class="course-item">ものづくり教育【初級】Ⅰ</div>
+                <div class="course-item">ものづくり確認テスト【初級】Ⅰ</div>
+                <div class="course-item">ものづくり教育【初級】Ⅱ</div>
+                <div class="course-item">ものづくり確認テスト【初級】Ⅱ</div>
+                <div class="course-item">ものづくり教育【中級】Ⅰ</div>
+                <div class="course-item">ものづくり確認テスト【中級】Ⅰ</div>
+                <div class="course-item">ものづくり教育【中級】Ⅱ</div>
+                <div class="course-item">ものづくり確認テスト【中級】Ⅱ</div>
+                <div class="course-item">ものづくり教育【上級】Ⅰ</div>
+                <div class="course-item">ものづくり確認テスト【上級】Ⅰ</div>
+                <div class="course-item">ものづくり教育【上級】Ⅱ</div>
+                <div class="course-item">ものづくり確認テスト【上級】Ⅱ</div>
+                <div class="course-item">品質管理プログラム【初級】Ⅰ</div>
+                <div class="course-item">品質管理確認テスト【初級】Ⅰ</div>
+                <div class="course-item">品質管理プログラム【初級】Ⅱ</div>
+                <div class="course-item">品質管理確認テスト【初級】Ⅱ</div>
+                <div class="course-item">現場リーダー教育【初級】①</div>
+                <div class="course-item">現場リーダー確認テスト【初級】①</div>
+                <div class="course-item">現場リーダー教育【初級】②</div>
+                <div class="course-item">現場リーダー確認テスト【初級】②</div>
+                <div class="course-item">現場リーダー教育【中級】</div>
+                <div class="course-item">現場リーダー確認テスト【中級】</div>
+                <div class="course-item">現場リーダー教育【上級】</div>
+                <div class="course-item">現場リーダー確認テスト【上級】</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>主な機能</h2>
+            <ul class="task-list">
+                <li class="task-item"><span class="task-icon">1</span>
+                    <div>講座コンテンツの一括抽出</div>
+                </li>
+                <li class="task-item"><span class="task-icon">2</span>
+                    <div>AIによる初期翻訳(複数言語対応)</div>
+                </li>
+                <li class="task-item"><span class="task-icon">3</span>
+                    <div>専門用語の統一管理</div>
+                </li>
+                <li class="task-item"><span class="task-icon">4</span>
+                    <div>レビュー・校正ワークフロー</div>
+                </li>
+                <li class="task-item"><span class="task-icon">5</span>
+                    <div>翻訳済みコンテンツの再インポート</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>技術スタック(案)</h2>
+            <p style="margin-bottom: 1rem;">以下の技術スタックを提案しますが、インターンの方のご経験やご希望に応じて調整可能です。</p>
+            <div>
+                <span class="badge">OpenAI API (翻訳)</span>
+                <span class="badge">Google Translate API</span>
+                <span class="badge">用語集管理DB</span>
+                <span class="badge">レビューツール</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ざっくりタスクリスト</h2>
+            <p style="margin-bottom: 1rem;">以下のステップで段階的に進めていく想定です。各ステップの詳細は協議しながら決定します。</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">対象言語・講座の整理</div>
+                        <div class="timeline-desc">翻訳対象言語の決定、優先順位付け</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">翻訳パイプライン構築</div>
+                        <div class="timeline-desc">自動翻訳〜レビュー〜再インポート</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">専門用語集の作成</div>
+                        <div class="timeline-desc">業界用語の翻訳統一</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">パイロット翻訳</div>
+                        <div class="timeline-desc">1〜2講座でテスト実施</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">全講座展開</div>
+                        <div class="timeline-desc">26講座の翻訳完了と品質管理</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="project05.html" class="btn btn-secondary">← 前のプロジェクト</a>
+            <a href="index.html" class="btn">一覧に戻る →</a>
+        </div>
+    </div>
+</body>
+
+</html>
