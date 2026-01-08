@@ -95,94 +95,169 @@
             margin-bottom: 1rem;
         }
 
-        .task-list {
-            list-style: none;
+        .reference-link {
+            display: block;
+            background: #f8fafc;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .task-item {
-            padding: 0.7rem 0;
+        .reference-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .flow-list {
+            list-style: none;
+            counter-reset: flow-counter;
+        }
+
+        .flow-item {
+            padding: 1rem 0;
             border-bottom: 1px solid #f1f5f9;
             display: flex;
             align-items: start;
-            gap: 0.75rem;
-        }
-
-        .task-item:last-child {
-            border-bottom: none;
-        }
-
-        .task-icon {
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            background: #667eea;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.1rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 0.4rem 0.9rem;
-            border-radius: 16px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin: 0.3rem 0.3rem 0.3rem 0;
-        }
-
-        .timeline {
-            margin-top: 1rem;
-        }
-
-        .timeline-item {
-            display: flex;
             gap: 1rem;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px dashed #e2e8f0;
+            counter-increment: flow-counter;
         }
 
-        .timeline-item:last-child {
+        .flow-item:last-child {
             border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
         }
 
-        .timeline-marker {
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
+        .flow-number {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
+            font-size: 0.9rem;
             font-weight: 700;
-            font-size: 0.9rem;
+            margin-top: 0.2rem;
         }
 
-        .timeline-content {
+        .flow-number::before {
+            content: counter(flow-counter);
+        }
+
+        .flow-content {
             flex: 1;
-            padding-top: 0.2rem;
         }
 
-        .timeline-title {
-            font-weight: 600;
-            color: #667eea;
-            margin-bottom: 0.3rem;
+        .flow-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
         }
 
-        .timeline-desc {
-            font-size: 0.9rem;
+        .flow-desc {
             color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .flow-details {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .layout-rule {
+            background: #fff3cd;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .layout-rule strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .scope-box {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .scope-box strong {
+            color: #059669;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .future-box {
+            background: #e0e7ff;
+            border-left: 4px solid #6366f1;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .future-box strong {
+            color: #4f46e5;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .copy-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            position: relative;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .copy-block-title {
+            color: #fbbf24;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
         }
 
         .nav-buttons {
@@ -227,6 +302,13 @@
             .header h1 {
                 font-size: 1.6rem;
             }
+
+            .copy-button {
+                position: static;
+                display: block;
+                margin-bottom: 1rem;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -239,98 +321,387 @@
             </div>
             <div class="project-number">プロジェクト①</div>
             <h1>CanvaとAIを活用したコンテンツ制作</h1>
-            <p>スライド・音声字幕付き動画の自動生成システム</p>
+            <p>スライド生成と成形の自動化システム</p>
         </div>
     </header>
 
     <div class="container">
         <div class="section">
             <div class="reference-badge">
-                📁 参照: クロスリンク_コンテンツ制作フロー<br>
-                📊 データ: R7.11 講座計画表.csv
+                📁 参照資料
             </div>
+            <a href="https://docs.google.com/spreadsheets/d/1zH1OryVAFDgir-rt9dcmSo942dnPBAER54lhl5tBJ4E/edit?gid=1673886325#gid=1673886325"
+                class="reference-link" target="_blank">
+                📊 講座計画表（スプレッドシート）を開く
+            </a>
 
             <h2>プロジェクト概要</h2>
-            <p>講座計画表に基づいて、スライドと音声字幕付きの動画を効率的に作成するフローを構築します。AIを活用してコンテンツ制作の属人性を減らし、規格化された高品質な教材を量産できる環境を目指します。</p>
+            <p>講座計画表（スプレッドシート）に基づいて、AIを活用したスライド生成から成形までを効率的に行うフローを構築します。Deep Research、Gemini
+                Canvas、Googleスライド、Canvaを組み合わせることで、属人性を減らし、規格化された高品質な教材スライドを作成できる環境を目指します。</p>
+
+            <div class="scope-box">
+                <strong>🎯 現時点の優先範囲</strong>
+                <p>このプロジェクトでは、まず<strong>「スライド生成と成形」までを業務化</strong>します。音声合成やアバター機能は次工程として検討しますが、当面はスライド原本の完成を目標とします。</p>
+            </div>
         </div>
 
         <div class="section">
-            <h2>主な機能</h2>
-            <ul class="task-list">
-                <li class="task-item">
-                    <span class="task-icon">1</span>
-                    <div>CSV講座計画表からのデータ読み込み機能</div>
+            <h2>主なフロー（手順）</h2>
+            <p style="margin-bottom: 1.5rem;">以下の手順で、講座スライドの原本を作成します。</p>
+
+            <ol class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">講座計画表でタイトル確認</div>
+                        <div class="flow-desc">スプレッドシート上の講座計画表から、対象講座のタイトルを確認します。</div>
+                    </div>
                 </li>
-                <li class="task-item">
-                    <span class="task-icon">2</span>
-                    <div>AIによるスライド内容の自動生成</div>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Deep Researchで講座骨子を決定</div>
+                        <div class="flow-desc">スプレッドシートの「0→1」タブにあるプロンプトを使い、GPT（ChatGPT等）でDeep Researchを実行します。</div>
+                        <div class="flow-details">
+                            <strong>目的:</strong> 講座の骨子（どんな講座にするか等）を決める<br>
+                            <strong>使用ツール:</strong> GPT（ChatGPT）<br>
+                            <strong>入力:</strong> 「0→1」タブのプロンプト
+                        </div>
+                    </div>
                 </li>
-                <li class="task-item">
-                    <span class="task-icon">3</span>
-                    <div>Canva APIを活用したスライドデザイン生成</div>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Gemini Canvasでスライド生成</div>
+                        <div class="flow-desc">GeminiのCanvas機能を使用し、Deep Research結果とプラスαのプロンプト（補助プロンプト）を貼り付けてスライドを生成します。
+                        </div>
+                        <div class="flow-details">
+                            <strong>使用ツール:</strong> Gemini（Canvas機能）<br>
+                            <strong>入力:</strong> Deep Research結果 + 補助プロンプト
+                        </div>
+                    </div>
                 </li>
-                <li class="task-item">
-                    <span class="task-icon">4</span>
-                    <div>音声合成による説明ナレーションの作成</div>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Googleスライドへインポート</div>
+                        <div class="flow-desc">生成されたスライドをGoogleスライドにエクスポート/インポートします。</div>
+                    </div>
                 </li>
-                <li class="task-item">
-                    <span class="task-icon">5</span>
-                    <div>字幕自動生成と動画エクスポート機能</div>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Googleスライドで整形</div>
+                        <div class="flow-desc">Googleスライド上で、はみ出た文字などを枠内に収める調整を行います。</div>
+                        <div class="flow-details">
+                            文字の大きさ調整、レイアウトの微調整など
+                        </div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">PDFで保存</div>
+                        <div class="flow-desc">整形後のスライドをPDF形式で保存します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Canvaフォルダへ移動しデザイン統一</div>
+                        <div class="flow-desc">保存したスライド（PDF/原本）を指定のCanvaフォルダに入れて、デザイン統一のために微調整します。</div>
+                        <div class="flow-details">
+                            <strong>ここまででスライド原本は完成</strong>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>スライド配置の基準（動画化前提）</h2>
+            <p style="margin-bottom: 1rem;">スライドは将来的に動画化することを前提としているため、以下のレイアウト基準を守ります。</p>
+
+            <div class="layout-rule">
+                <strong>📐 下側15%〜20%は字幕領域</strong>
+                <p>動画の字幕が表示される領域のため、スライド要素を配置しません（空白として確保）。</p>
+            </div>
+
+            <div class="layout-rule">
+                <strong>🎭 右下付近はAIアバター用余白</strong>
+                <p>AIアバター（キャラクター）を差し込みやすくするため、字幕領域と合わせて右下を空けます。</p>
+            </div>
+
+            <p style="margin-top: 1rem; color: #64748b; font-size: 0.95rem;">
+                これらの余白調整は、主にCanvaで微修正する段階で意識します。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>使用ツール</h2>
+            <p style="margin-bottom: 1rem;">以下のツールを組み合わせてスライド制作を行います。</p>
+
+            <ul class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Googleスプレッドシート</div>
+                        <div class="flow-desc">講座計画表の管理、プロンプトの保管</div>
+                    </div>
+                </li>
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">GPT（ChatGPT等）</div>
+                        <div class="flow-desc">Deep Researchによる講座骨子の設計</div>
+                    </div>
+                </li>
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Gemini Canvas</div>
+                        <div class="flow-desc">スライドの自動生成</div>
+                    </div>
+                </li>
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Googleスライド</div>
+                        <div class="flow-desc">スライドの整形・調整</div>
+                    </div>
+                </li>
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Canva</div>
+                        <div class="flow-desc">デザイン統一・微調整</div>
+                    </div>
                 </li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>技術スタック(案)</h2>
-            <p style="margin-bottom: 1rem;">以下の技術スタックを提案しますが、インターンの方のご経験やご希望に応じて調整可能です。</p>
-            <div>
-                <span class="badge">Python</span>
-                <span class="badge">Canva API</span>
-                <span class="badge">OpenAI API</span>
-                <span class="badge">Google TTS</span>
-                <span class="badge">FFmpeg</span>
+            <h2>次工程（音声・アバター）</h2>
+
+            <div class="future-box">
+                <strong>🔮 今後の検討事項</strong>
+                <p>スライド原本完成後、以下の機能を段階的に検討していきます。</p>
             </div>
+
+            <ul class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">音声合成によるナレーション作成</div>
+                        <div class="flow-desc">ツールは現状「音読さん」を使う想定（※未確定）</div>
+                    </div>
+                </li>
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">AIアバターの導入検討</div>
+                        <div class="flow-desc">NoLang等を検討し、アバター導入を検討していく段階</div>
+                    </div>
+                </li>
+            </ul>
+
+            <p style="margin-top: 1rem; color: #64748b; font-size: 0.95rem;">
+                ※ただし当面は、音声合成まで出来なくてもOK。まず「スライド生成と成形」を確実に業務化することを優先します。
+            </p>
         </div>
 
         <div class="section">
-            <h2>ざっくりタスクリスト</h2>
-            <p style="margin-bottom: 1rem;">以下のステップで段階的に進めていく想定です。各ステップの詳細は協議しながら決定します。</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">要件定義とワークフロー設計</div>
-                        <div class="timeline-desc">現状フローの確認、AIプロンプト設計</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">CSV読み込み・データ処理</div>
-                        <div class="timeline-desc">計画表のパース、データ構造の整理</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">スライド自動生成機能</div>
-                        <div class="timeline-desc">Canva API連携、テンプレート作成</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">音声・字幕・動画生成</div>
-                        <div class="timeline-desc">音声合成、字幕付与、動画エクスポート</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">5</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">テスト・改善・運用化</div>
-                        <div class="timeline-desc">品質チェック、フィードバック反映</div>
-                    </div>
-                </div>
+            <h2>プロンプト（コピペ用）</h2>
+            <p style="margin-bottom: 1.5rem;">以下のプロンプトは、業務で使用する定型文です。コピーボタンでコピーできます。</p>
+
+            <h3 style="color: #667eea; margin: 2rem 0 1rem 0; font-size: 1.2rem;">工程A：Deep Research用プロンプト</h3>
+            <div class="copy-block">
+                <button class="copy-button" onclick="copyPromptA()">📋 コピー</button>
+                <div class="copy-block-title">▼工程A：Deep Research（改修版 / 業務シーン補足＋スライド分割設計対応）</div>
+                <pre id="promptA" style="white-space: pre-wrap; margin: 0;">あなたは企業向けE-learning講座の「教材設計者／研究者」です。
+これから提示する【講座情報】と【スライドタイトル一覧】をもとに、Deep Researchで根拠を確認しながら、
+スライド作成に直結する"素材"を、ルールに従って作成してください。
+
+# 0. 絶対ルール（最重要）
+- 出典不明の断定は禁止。根拠が弱い主張は「根拠が弱い」と明記する。
+- 抽象比喩（釣り・大海・竹・登山・戦国・宇宙など）での例え話は禁止。
+- 例えは必ず「業務シーン型ミニケース（仕事の具体場面）」にする。
+- 不要な専門用語の追加は禁止（必要な場合は短い定義を添える）。
+- 受講者が行動に移せる形に落とす（知識だけで終わらせない）。
+
+# 1. 目的（この仕事のゴール）
+- スライド作成の"原稿材料"を作る（工程Bでそのままスライド化できる粒度）。
+- 各タイトルを「原則2枚」に分割できるように、内容の塊（導入/要点/具体/注意/行動）を揃える。
+- 補足枠に使える「業務シーン型ミニケース」を、短く用意する。
+
+# 2. 講座情報（ここを埋める）
+【講座テーマ】{COURSE_THEME}
+【受講者像】{AUDIENCE}（例：製造・物流現場／2年目社員／外国人比率など）
+【学習ゴール】{LEARNING_GOALS}（行動ベースで3〜5個）
+【想定尺】{DURATION}（例：30分、45分など）
+【トーン】{TONE}（例：前向き、厳しめ、現場寄り 等）
+【ユニット構成】{UNIT_PLAN}（例：全4ユニット、各22タイトル 等）
+【NG】{NG_LIST}（例：煽りすぎ、専門用語過多、長文など）
+
+# 3. 入力：スライドタイトル一覧（ここを貼る）
+- 形式：ユニット番号 / タイトル番号 / タイトル
+{SLIDE_TITLES}
+
+# 4. 調査要件（Deep Researchのやり方）
+- 各タイトルごとに「何が正しいか」を確認し、根拠ソースを必ず提示する。
+- ソース優先順位：
+  1) 公的機関・学会・大学・政府統計
+  2) 査読論文／書籍（出版社・著者明記）
+  3) 信頼性の高い企業レポート（調査方法が明記されているもの）
+- "よくある言い回し"や出典不明の定説（例：学習ピラミッド等）は、エビデンスの有無を明確にし、扱い方を提案する。
+- 例：「根拠が弱い／誤解が多い→使うなら注意書き／別概念に置換」など。
+- 最新性が重要な内容（制度、統計、用語定義等）は、必ず一次情報で確認する（確認日も記載）。
+
+# 5. 出力フォーマット（タイトルごとに必ずこの構造）
+※各タイトルは「通し番号（そのユニット内で1から連番）」を付けて出力する。
+※この通し番号は工程Bのスライドタイトルにそのまま使用する（例：1. ～ / 1. ～（続き））
+
+【No】{n}（ユニット内の通し番号）
+【Title】{そのままのタイトル}
+
+A) 受講者に伝えるべき結論（1文）
+B) キーメッセージ（最大3点、短く）
+C) 業務シーン型ミニケース（仕事の具体場面を1つ）
+   - 抽象比喩は禁止
+   - 1〜2文（状況→行動→結果）で完結
+D) 誤解・落とし穴（1〜2点）
+E) 行動につなぐ一言（1文：次に何をするか）
+F) クイズ（1問：選択式 or ○×）＋正解＋短い解説
+G) ミニワーク（30秒〜2分でできる問い）※可能なら
+H) 2枚分割の配分案（工程Bで使うために必須）
+   - 1/2枚目（"なぜ/何"）：このスライドに入れる要素
+   - 2/2枚目（"どうやって/具体"）：このスライドに入れる要素
+I) 補足枠候補（任意）
+   - 使うなら「補足：」で始める短文を1つ
+   - 最大2行想定
+   - 必ず業務シーン型（抽象比喩禁止）
+J) 根拠ソース（2〜5件）
+   - 形式：タイトル／著者・機関／年／リンク（URL）／一言要約／確認日（必要なら）</pre>
+            </div>
+
+            <h3 style="color: #667eea; margin: 2rem 0 1rem 0; font-size: 1.2rem;">工程B：Gemini Canvas用プロンプト</h3>
+            <div class="copy-block">
+                <button class="copy-button" onclick="copyPromptB()">📋 コピー</button>
+                <div class="copy-block-title">▼工程B：Gemini Canvas（改修版 / タイトル連番＋業務シーン補足＋安全域統合）</div>
+                <pre id="promptB" style="white-space: pre-wrap; margin: 0;">あなたはE-learning講座のスライド構成・デザインのプロフェッショナルです。
+以下の【Deep Research結果】と【スライドタイトル一覧】を元に、スライドをゼロから生成してください。
+（Gemini Canvasでスライド化する前提）
+
+# 0. 絶対ルール（最重要）
+- スライド内に「文字入り画像」を作らない（画像・図形を使う場合も文字は入れない）。
+- 抽象比喩（釣り・大海・竹・登山・戦国・宇宙など）での補足は禁止。補足は業務シーン型のみ。
+- 読みやすさ最優先。1枚に詰め込みすぎない。
+
+# 1. 目的（この仕事のゴール）
+- 工程Aの素材を、字幕・アバター前提で読みやすいスライドに落とす。
+- 1タイトルを原則2枚に分け、学習テンポが良い流れにする。
+- もともと短く美しく収まる場合は、SMART_FITで1枚運用も可。
+
+# 2. 出力モード（どちらかを採用）
+【MODE】= {STRICT_2P / SMART_FIT}
+
+- STRICT_2P：
+  - 各タイトルを必ず2枚にする（総枚数を厳密に合わせる）
+  - 「(1)(2)／(3)だけ」等の不格好分割は禁止。密度を均等化する。
+- SMART_FIT：
+  - 原則2枚だが、1枚でバチッと収まるなら1枚でも良い（見た目最優先）
+
+# 3. タイトル表示ルール（必須：通し番号＋（続き））
+- 各スライドは必ずタイトルを最上部先頭に大きく配置する。
+- タイトルは必ず「通し番号. タイトル」で統一する（通し番号は工程Aの【No】を使用）。
+- 1タイトルを2枚に分ける場合：
+  - 1/2枚目：{n}. {タイトル}
+  - 2/2枚目：{n}. {タイトル}（続き）
+- 1枚のままの場合は「（続き）」は付けない。
+
+# 4. レイアウト安全域（必須）
+- 下部10%は必ず空ける（字幕・UI安全域）。本文テキスト・補足ともに侵入禁止。
+- 右下を必ず空けるルールは設けない（右側に画像を置く運用を優先）。
+- 重なりの許容：
+  - 本文テキスト × 画像/アバター：重なり禁止（最優先）
+  - 画像 × アバター：重なり許可
+- 本文テキストは左側の本文エリアに固定し、右側はビジュアルエリアとして確保する。
+
+# 5. 文字量の上限（行数ではなく密度で管理）
+- 1枚に載せる文字は「一目で追える密度」を上限とする。
+- 目安（推奨）：
+  - 箇条書き中心：5〜7行程度
+  - 文章中心：4〜6行程度
+  ※左右2カラム等で視認性が保てるなら例外可。
+- 上限を超えそうなら、2枚に再配分して密度を均等化する。
+
+# 6. 分割ルール（見栄えを崩さないための具体）
+- 分割の基本は「意味の塊」で切る：
+  - 定義→理由→方法→まとめ
+  - 対比（A vs B）
+  - 手順（Step）・観点（定量/定性）・対象（上司/同僚/後輩）など
+- 箇条書き（ポイント3つ等）の扱い：
+  - 1枚で読みやすいなら1枚に集約（SMART_FITなら推奨）。
+  - どうしても2枚にする場合（STRICT_2P）：
+    - 「(1)(2)／(3)だけ」にならないよう、文章も合わせて配分し密度を均等化する。
+
+# 7. 補足枠（任意・最小 / 業務シーン型のみ）
+- 工程Aの「補足枠候補」を、必要な場合に限り「補足枠」として追加してよい。
+- 補足枠の制約：
+  - 必ず「補足：」で開始し、本文と別ブロック
+  - 1スライドにつき最大2行（または短い箇条書き1点）
+  - 下部10%安全域には置かない
+  - 原則2/2枚目に置く
+- 禁止：
+  - 抽象比喩、長文解説、煽り、余計な専門用語、文字量の増加
+
+# 8. レイアウト型（いずれかを選ぶ）
+A) タイトル＋短い導入（上）＋要点（中）＋余白（下）
+B) タイトル＋左右2カラム（対比・分類）
+C) タイトル＋上段に定義/結論＋下段に箇条書き
+D) タイトル＋箇条書き中心（文字が少ない時のみ）
+
+# 9. 生成するスライド構成（各ユニット）
+- 表紙：ユニット名、講座名（必要なら）、サブタイトル（短く）
+- 本文：タイトル一覧に従って生成
+- まとめ：ユニット末尾に1枚（任意：SMART_FITでは入れて良い。STRICT_2Pで枚数固定なら条件に従う）
+
+# 10. 出力フォーマット（必ずこの形）
+## Unit情報
+- Unit名：{UNIT_NAME}
+- MODE：{MODE}
+- 目標枚数：表紙＋{TARGET_BODY_SLIDES}枚（STRICT_2Pの場合は厳守）
+
+## Slides
+各スライドごとに下記6項目：
+1) Slide ID：{UNIT}-{番号}（例：U1-01）
+2) Slide種別：{表紙 / 本文}
+3) スライドタイトル：{n}. {タイトル}（2/2枚目は同じnで（続き））
+4) 本文テキスト：工程AのA〜Eを中心に、読みやすい塊で配置（※工程Aの主張を歪めない）
+5) 補足枠（任意）：補足が無い場合は「なし」
+6) レイアウト指定：A/B/C/D＋配置メモ（左本文／右ビジュアル／下部10%空白など）
+
+# 11. 入力（ここを貼る）
+【スライドタイトル一覧】
+{SLIDE_TITLES}
+
+【Deep Research結果（工程Aの出力をそのまま貼る）】
+{DEEP_RESEARCH_RESULT}
+
+# 12. 最終セルフチェック（出力前に必ず満たす）
+- 下部10%安全域が確保されている（本文・補足とも侵入していない）
+- 本文が画像/アバターと重なっていない
+- スライドタイトルが「通し番号. タイトル」で統一されている
+- 2枚分割時、2/2枚目タイトルに必ず（続き）が付いている（番号は同一）
+- 過密スライドが無い（必要なら分割）
+- 補足は最小で、業務シーン型のみ（抽象比喩が混ざっていない）
+- 文字入り画像を作る指示が含まれていない</pre>
             </div>
         </div>
 
@@ -339,6 +710,22 @@
             <a href="project02.html" class="btn">次のプロジェクト →</a>
         </div>
     </div>
+
+    <script>
+        function copyPromptA() {
+            const text = document.getElementById('promptA').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('工程A用プロンプトをコピーしました！');
+            });
+        }
+
+        function copyPromptB() {
+            const text = document.getElementById('promptB').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('工程B用プロンプトをコピーしました！');
+            });
+        }
+    </script>
 </body>
 
 </html>
