@@ -21,7 +21,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
             color: white;
             padding: 2rem;
         }
@@ -78,98 +78,158 @@
 
         .section h2 {
             font-size: 1.4rem;
-            color: #38f9d7;
+            color: #a855f7;
             margin-bottom: 1.2rem;
             padding-bottom: 0.7rem;
             border-bottom: 2px solid #e2e8f0;
         }
 
-        .task-list {
-            list-style: none;
+        .section h3 {
+            font-size: 1.1rem;
+            color: #c084fc;
+            margin: 1.5rem 0 1rem 0;
         }
 
-        .task-item {
-            padding: 0.7rem 0;
-            border-bottom: 1px solid #f1f5f9;
-            display: flex;
-            align-items: start;
-            gap: 0.75rem;
+        .benchmark-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
         }
 
-        .task-item:last-child {
-            border-bottom: none;
+        .benchmark-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .task-icon {
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            background: #38f9d7;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.1rem;
+        .strategy-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
         }
 
-        .badge {
+        .strategy-box strong {
+            color: #1e40af;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .strategy-box ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .strategy-box li {
+            margin-bottom: 0.3rem;
+        }
+
+        .research-box {
+            background: #f3e8ff;
+            border-left: 4px solid #a855f7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .research-box strong {
+            color: #7c3aed;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-box ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .research-box li {
+            margin-bottom: 0.3rem;
+        }
+
+        .priority-badge {
             display: inline-block;
-            background: #38f9d7;
+            background: #f59e0b;
             color: white;
             padding: 0.4rem 0.9rem;
             border-radius: 16px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin: 0.3rem 0.3rem 0.3rem 0;
+            margin: 0.5rem 0.3rem 0.5rem 0;
         }
 
-        .timeline {
-            margin-top: 1rem;
+        .flow-list {
+            list-style: none;
+            counter-reset: flow-counter;
         }
 
-        .timeline-item {
+        .flow-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f5f9;
             display: flex;
+            align-items: start;
             gap: 1rem;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px dashed #e2e8f0;
+            counter-increment: flow-counter;
         }
 
-        .timeline-item:last-child {
+        .flow-item:last-child {
             border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
         }
 
-        .timeline-marker {
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        .flow-number {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 700;
             font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 0.2rem;
         }
 
-        .timeline-content {
+        .flow-number::before {
+            content: counter(flow-counter);
+        }
+
+        .flow-content {
             flex: 1;
-            padding-top: 0.2rem;
         }
 
-        .timeline-title {
-            font-weight: 600;
-            color: #38f9d7;
-            margin-bottom: 0.3rem;
+        .flow-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
         }
 
-        .timeline-desc {
+        .flow-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .component-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+        }
+
+        .component-card h4 {
+            color: #a855f7;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .component-card p {
             font-size: 0.9rem;
             color: #64748b;
         }
@@ -183,7 +243,7 @@
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background: #38f9d7;
+            background: #a855f7;
             color: white;
             text-decoration: none;
             border-radius: 8px;
@@ -192,7 +252,7 @@
         }
 
         .btn:hover {
-            background: #43e97b;
+            background: #c084fc;
             transform: translateY(-2px);
         }
 
@@ -223,92 +283,334 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="breadcrumb"><a href="index.html">← プロジェクト一覧に戻る</a></div>
+            <div class="breadcrumb">
+                <a href="index.html">← プロジェクト一覧に戻る</a>
+            </div>
             <div class="project-number">プロジェクト⑤</div>
             <h1>音声スライド生成システム</h1>
-            <p>NoLangをベンチマークとした自社開発</p>
+            <p>NoLangをベンチマークとした内製可能性の調査・検証</p>
         </div>
     </header>
 
     <div class="container">
         <div class="section">
             <h2>プロジェクト概要</h2>
-            <p>テキスト、PDF、Webコンテンツから高品質な動画を自動生成できるシステムを自前で開発します。ベンチマークとしてNoLangを参考にし、ビジネス資料の動画化を目的とします。</p>
+            <p>「NoLang」のような、テキストやPDF、PowerPointから高品質な音声付き動画を生成できるAIサービスを、自社で開発する可能性を探ります。まずはNoLangの機能を調査・分析し、内製の実現可能性を検証したうえで、要件定義・技術仕様・設計書まで作成します。
+            </p>
+
+            <div class="benchmark-box">
+                <strong>🎯 ベンチマーク: NoLang</strong>
+                <p>NoLangは、テキスト・PDF・PPTX・音声・動画の4入力から、AI音声・アバター・字幕付きの動画を自動生成するサービスです。本プロジェクトでは、NoLangの機能を参考にしつつ、自社教育コンテンツ事業に最適化したシステムの内製可能性を探ります。
+                </p>
+            </div>
+
+            <div class="priority-badge">📊 優先度: 比較的早期の判断が必要</div>
+            <p style="margin-top: 1rem; color: #64748b; font-size: 0.95rem;">
+                インターンの方にリサーチいただき、実現可能性の壁打ちや実装を進めたいプロジェクトです。最優先ではありませんが、比較的はじめの方に判断してほしい案件として位置づけます。
+            </p>
         </div>
 
         <div class="section">
-            <h2>主な機能</h2>
-            <ul class="task-list">
-                <li class="task-item"><span class="task-icon">1</span>
-                    <div>テキスト・PDF・WebからのコンテンツインポートE</div>
+            <h2>NoLangで満たせそうな要件（公開情報ベース）</h2>
+
+            <h3>1. 入力形式（NoLangの4入力）</h3>
+            <div class="research-box">
+                <strong>📥 対応入力</strong>
+                <ul>
+                    <li>テキスト・Webページ</li>
+                    <li>PDF・PPTX</li>
+                    <li>音声</li>
+                    <li>動画</li>
+                </ul>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">NoLangは4つの入力形式から動画生成が可能と案内されています。</p>
+            </div>
+
+            <h3>2. 音声合成の品質・表現</h3>
+            <div class="research-box">
+                <strong>🔊 NoLang 4.0の特徴</strong>
+                <ul>
+                    <li>最新の音声合成モデル導入</li>
+                    <li>囁き声・抑揚など感情豊かな読み上げ</li>
+                    <li>100体以上のアバター（Live2D/3D）</li>
+                </ul>
+            </div>
+
+            <h3>3. 字幕連動（動画入力時）</h3>
+            <div class="research-box">
+                <strong>📝 自動字幕機能</strong>
+                <p>素材の動画ファイルをアップロードすると、字幕が自動追加され、内容に即した画像・アバターが挿入された動画を生成します。</p>
+            </div>
+
+            <h3>4. 編集（テンプレ／要素調整）</h3>
+            <div class="research-box">
+                <strong>✏️ カスタマイズ機能</strong>
+                <p>テンプレート機能により、アバター・BGM・背景・テロップのフォントや位置などをカスタマイズ（編集）可能とされています。</p>
+            </div>
+
+            <h3>5. API連携（NoLang API / OEM）</h3>
+            <div class="research-box">
+                <strong>🔌 外部連携</strong>
+                <p>NoLang APIは、外部サービス・自社システムに動画生成機能を組み込める旨が案内されています。api.no-lang.com/v1系のエンドポイント例も確認できます。</p>
+            </div>
+
+            <h3>6. 商用・ライセンス注意</h3>
+            <div class="research-box">
+                <strong>⚖️ ライセンス</strong>
+                <p>FAQ抜粋では「通常の動画はCC-BY-SAで、コピーライト明記で商用利用可能」という旨が見えます。ただし運用時は必ず最新FAQ・規約で確定する必要があります。また、Webページ要約動画は権利関係の注意があるという解説もあります。
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>プロジェクト⑤の要求（整理）</h2>
+
+            <h3>目的</h3>
+            <p>自社で研修動画／講座動画を効率生成する（教育コンテンツが事業の中核）</p>
+
+            <h3>入力</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                <li>テキスト</li>
+                <li>スライド画像</li>
+                <li>PDF</li>
+                <li>PowerPoint（可能なら）</li>
+            </ul>
+
+            <h3>出力</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                <li>MP4動画</li>
+                <li>埋め込み形式（プレイヤー／URL等）</li>
+            </ul>
+
+            <h3>言語</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                <li><strong>当面</strong>: 日本語</li>
+                <li><strong>将来</strong>: 英語は視野（優先度は低い）</li>
+            </ul>
+
+            <h3>リサーチ観点（必須）</h3>
+            <div class="research-box">
+                <strong>🔍 調査項目</strong>
+                <ul>
+                    <li><strong>音声合成精度</strong>（最重要）</li>
+                    <li>字幕連動</li>
+                    <li>アバター生成</li>
+                    <li>エディター機能</li>
+                    <li>API連携</li>
+                    <li>商用ライセンス</li>
+                    <li><strong>内製可能性</strong>（技術的実現性・費用感）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>戦略の選択肢（Buy / Hybrid / Build）</h2>
+
+            <h3>A. Buy（NoLangを使う）</h3>
+            <div class="strategy-box">
+                <strong>✅ メリット</strong>
+                <ul>
+                    <li>最短で「入力→動画」まで到達しやすい</li>
+                    <li>PDF/PPTX/音声/動画対応が明記済み</li>
+                    <li>API/OEMの選択肢がある（社内ツールに組み込み可能）</li>
+                </ul>
+                <strong style="margin-top: 1rem; color: #dc2626;">⚠️ リスク</strong>
+                <ul>
+                    <li>権利・ライセンス条件（特に素材由来の著作権／クレジット表記）</li>
+                    <li>外部サービス依存（価格変更・サービス終了リスク）</li>
+                </ul>
+            </div>
+
+            <h3>B. Hybrid（当面NoLang、徐々に内製）</h3>
+            <div class="strategy-box">
+                <strong>🔄 アプローチ</strong>
+                <ul>
+                    <li>まずNoLang（またはNoLang API）で運用を成立させる</li>
+                    <li>並行で内製するのは「差別化ポイント」に限定</li>
+                    <li>例: 自社専用音声、固定アバター、LMS連携、監査ログ、教材テンプレ統一</li>
+                </ul>
+            </div>
+
+            <h3>C. Build（完全内製）</h3>
+            <div class="strategy-box">
+                <strong>🛠️ 実現性</strong>
+                <p>実現は可能だが、NoLang相当（字幕・アバター・編集UI・レンダリング・API・権利対応）まで全部やるとスコープが大きい。</p>
+                <strong style="margin-top: 1rem;">📌 MVP（段階的アプローチ）</strong>
+                <p>「音声品質最優先」のMVPなら、TTS＋字幕＋スライド動画合成（アバターは簡易）で段階的に作れる。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>内製する場合の要件定義（MVP → 拡張）</h2>
+
+            <h3>MVP（まず作る価値が高い最小構成）</h3>
+            <div class="component-card">
+                <h4>入力</h4>
+                <p>PDF / PPTX / テキスト</p>
+            </div>
+
+            <div class="component-card">
+                <h4>台本生成</h4>
+                <p>LLMでスライドごとにナレーション案を自動生成</p>
+            </div>
+
+            <div class="component-card">
+                <h4>音声合成</h4>
+                <p>高品質TTS（候補: Google Cloud TTS, Azure Speech, OpenAI音声モデル等）</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.9rem;">
+                    <li>Google Cloud TTS: WaveNet/新世代HD音声</li>
+                    <li>Azure Speech: ニューラル音声／言語対応</li>
+                    <li>OpenAI: API向け音声モデル継続更新</li>
+                </ul>
+            </div>
+
+            <div class="component-card">
+                <h4>字幕</h4>
+                <p>台本からSRT/VTT生成（音声長に合わせて自動タイミング調整）</p>
+            </div>
+
+            <div class="component-card">
+                <h4>動画合成</h4>
+                <p>スライド画像＋音声＋字幕をFFmpeg等でMP4化</p>
+            </div>
+
+            <div class="component-card">
+                <h4>管理</h4>
+                <p>ジョブ投入／進捗／成果物ダウンロード</p>
+            </div>
+
+            <h3 style="margin-top: 2rem;">拡張（プロジェクト要件に近づける）</h3>
+            <ul class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">アバター（右下固定など）＋口パク（viseme）同期</div>
+                        <div class="flow-desc">視覚的な案内役としてアバターを追加し、音声に合わせた口の動きを実現</div>
+                    </div>
                 </li>
-                <li class="task-item"><span class="task-icon">2</span>
-                    <div>AIによるコンテンツ理解と構造化</div>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">編集UI（スライド単位で台本・読み上げ差し替え）</div>
+                        <div class="flow-desc">ユーザーが台本を編集し、再生成できるインターフェース</div>
+                    </div>
                 </li>
-                <li class="task-item"><span class="task-icon">3</span>
-                    <div>スライド自動生成とレイアウト最適化</div>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">API公開（外部システム連携）</div>
+                        <div class="flow-desc">LMSや社内システムとの連携API</div>
+                    </div>
                 </li>
-                <li class="task-item"><span class="task-icon">4</span>
-                    <div>音声ナレーション自動生成</div>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">埋め込みプレイヤー</div>
+                        <div class="flow-desc">顧客サイトへの埋め込み用プレイヤー</div>
+                    </div>
                 </li>
-                <li class="task-item"><span class="task-icon">5</span>
-                    <div>動画エンコード・エクスポート</div>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">日本語→英語の二言語対応</div>
+                        <div class="flow-desc">将来的な多言語展開への対応</div>
+                    </div>
                 </li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>技術スタック(案)</h2>
-            <p style="margin-bottom: 1rem;">以下の技術スタックを提案しますが、インターンの方のご経験やご希望に応じて調整可能です。</p>
-            <div>
-                <span class="badge">Python</span>
-                <span class="badge">React (フロントエンド)</span>
-                <span class="badge">OpenAI API</span>
-                <span class="badge">PDF解析ライブラリ</span>
-                <span class="badge">TTS Engine</span>
-                <span class="badge">FFmpeg</span>
+            <h2>技術仕様（案：システム構成）</h2>
+
+            <h3>コンポーネント</h3>
+            <div class="component-card">
+                <h4>Ingest Service</h4>
+                <p>PDF/PPTX→スライド画像化＋テキスト抽出</p>
             </div>
+
+            <div class="component-card">
+                <h4>Script Service</h4>
+                <p>LLMで「スライド別ナレーション」生成</p>
+            </div>
+
+            <div class="component-card">
+                <h4>TTS Service</h4>
+                <p>音声合成（プロバイダ差し替え可能に）</p>
+            </div>
+
+            <div class="component-card">
+                <h4>Subtitle Service</h4>
+                <p>SRT/VTT生成＋タイミング補正</p>
+            </div>
+
+            <div class="component-card">
+                <h4>Render Service</h4>
+                <p>FFmpegで合成（字幕＋アバターオーバーレイ）</p>
+            </div>
+
+            <div class="component-card">
+                <h4>Web App</h4>
+                <p>ジョブ作成／編集／プレビュー／出力</p>
+            </div>
+
+            <div class="component-card">
+                <h4>Storage</h4>
+                <p>素材（入力）・中間生成物・出力MP4</p>
+            </div>
+
+            <div class="component-card">
+                <h4>Audit/Log</h4>
+                <p>生成履歴、誰が何を作ったか（法人向け必須）</p>
+            </div>
+
+            <h3 style="margin-top: 2rem;">API（最低限）</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li><code>POST /jobs</code> - 入力登録・生成開始</li>
+                <li><code>GET /jobs/{id}</code> - 進捗・ステータス</li>
+                <li><code>GET /jobs/{id}/artifacts</code> - MP4、SRT、台本など</li>
+                <li><code>POST /jobs/{id}/edit</code> - 台本差し替え→部分再生成</li>
+            </ul>
         </div>
 
         <div class="section">
-            <h2>ざっくりタスクリスト</h2>
-            <p style="margin-bottom: 1rem;">以下のステップで段階的に進めていく想定です。各ステップの詳細は協議しながら決定します。</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">NoLang調査・ベンチマーク分析</div>
-                        <div class="timeline-desc">機能・UI・技術スタックの調査</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">コア機能設計</div>
-                        <div class="timeline-desc">コンテンツ理解・スライド生成ロジック</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">プロトタイプ開発</div>
-                        <div class="timeline-desc">MVP (最小機能版) の実装</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">フロントエンド・UI構築</div>
-                        <div class="timeline-desc">使いやすいインターフェースの設計</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">5</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">テスト・改善・展開</div>
-                        <div class="timeline-desc">実際の資料で検証、機能拡張</div>
-                    </div>
-                </div>
+            <h2>インターンに依頼する検証タスク</h2>
+            <p style="margin-bottom: 1.5rem;">以下の項目を調査・検証してもらいます。</p>
+
+            <h3>1. NoLang調査</h3>
+            <div class="research-box">
+                <strong>📋 調査項目</strong>
+                <ul>
+                    <li>APIでどこまで制御できるか（テンプレ、音声、字幕、アバター、編集）</li>
+                    <li>商用利用条件（特にクレジット表記・入力素材の権利）</li>
+                    <li>料金体系・プラン</li>
+                    <li>レート制限・利用制限</li>
+                    <li>サービスレベル・サポート体制</li>
+                </ul>
+            </div>
+
+            <h3>2. 内製の場合の技術調査</h3>
+            <div class="research-box">
+                <strong>🔬 検証項目</strong>
+                <ul>
+                    <li><strong>日本語TTS品質の比較</strong>（Google / Azure / OpenAIなど）</li>
+                    <li>レンダリング（字幕同期・アバター同期）の技術難易度と工数感</li>
+                    <li>段階開発の可能性（MVP → 拡張）</li>
+                    <li>コスト試算（開発費 vs ランニングコスト vs NoLang利用料）</li>
+                </ul>
+            </div>
+
+            <h3>3. 実現可能性の壁打ち</h3>
+            <div class="research-box">
+                <strong>💭 判断材料</strong>
+                <ul>
+                    <li>Buy / Hybrid / Build のどれが最適か</li>
+                    <li>内製する場合のリスク・課題</li>
+                    <li>NoLang利用の場合のリスク・課題</li>
+                    <li>推奨アプローチとその理由</li>
+                </ul>
             </div>
         </div>
 
