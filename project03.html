@@ -21,8 +21,8 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #0f172a;
             padding: 2rem;
         }
 
@@ -33,12 +33,12 @@
 
         .breadcrumb {
             font-size: 0.9rem;
-            opacity: 0.9;
+            opacity: 0.8;
             margin-bottom: 1rem;
         }
 
         .breadcrumb a {
-            color: white;
+            color: #0f172a;
             text-decoration: none;
         }
 
@@ -59,7 +59,7 @@
 
         .header p {
             font-size: 1.05rem;
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
         .container {
@@ -78,17 +78,147 @@
 
         .section h2 {
             font-size: 1.4rem;
-            color: #00f2fe;
+            color: #0ea5e9;
             margin-bottom: 1.2rem;
             padding-bottom: 0.7rem;
             border-bottom: 2px solid #e2e8f0;
         }
 
-        .task-list {
+        .section h3 {
+            font-size: 1.1rem;
+            color: #06b6d4;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .flow-list {
+            list-style: none;
+            counter-reset: flow-counter;
+        }
+
+        .flow-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            counter-increment: flow-counter;
+        }
+
+        .flow-item:last-child {
+            border-bottom: none;
+        }
+
+        .flow-number {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0f172a;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 0.2rem;
+        }
+
+        .flow-number::before {
+            content: counter(flow-counter);
+        }
+
+        .flow-content {
+            flex: 1;
+        }
+
+        .flow-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .flow-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .feature-box {
+            background: #fff3cd;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .feature-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-box ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .feature-box li {
+            margin-bottom: 0.3rem;
+        }
+
+        .goal-box {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .goal-box strong {
+            color: #059669;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-box {
+            background: #e0e7ff;
+            border-left: 4px solid #6366f1;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .input-box strong {
+            color: #4f46e5;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+        }
+
+        .tool-card h4 {
+            color: #0ea5e9;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .deliverable-list {
             list-style: none;
         }
 
-        .task-item {
+        .deliverable-list li {
             padding: 0.7rem 0;
             border-bottom: 1px solid #f1f5f9;
             display: flex;
@@ -96,15 +226,15 @@
             gap: 0.75rem;
         }
 
-        .task-item:last-child {
+        .deliverable-list li:last-child {
             border-bottom: none;
         }
 
-        .task-icon {
+        .deliverable-icon {
             width: 24px;
             height: 24px;
             min-width: 24px;
-            background: #00f2fe;
+            background: #0ea5e9;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -113,65 +243,6 @@
             font-size: 0.75rem;
             font-weight: 600;
             margin-top: 0.1rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #00f2fe;
-            color: white;
-            padding: 0.4rem 0.9rem;
-            border-radius: 16px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin: 0.3rem 0.3rem 0.3rem 0;
-        }
-
-        .timeline {
-            margin-top: 1rem;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .timeline-marker {
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .timeline-content {
-            flex: 1;
-            padding-top: 0.2rem;
-        }
-
-        .timeline-title {
-            font-weight: 600;
-            color: #00f2fe;
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-desc {
-            font-size: 0.9rem;
-            color: #64748b;
         }
 
         .nav-buttons {
@@ -183,7 +254,7 @@
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background: #00f2fe;
+            background: #0ea5e9;
             color: white;
             text-decoration: none;
             border-radius: 8px;
@@ -192,7 +263,7 @@
         }
 
         .btn:hover {
-            background: #4facfe;
+            background: #06b6d4;
             transform: translateY(-2px);
         }
 
@@ -223,85 +294,263 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="breadcrumb"><a href="index.html">← プロジェクト一覧に戻る</a></div>
+            <div class="breadcrumb">
+                <a href="index.html">← プロジェクト一覧に戻る</a>
+            </div>
             <div class="project-number">プロジェクト③</div>
             <h1>顧客へのマニュアル動画制作</h1>
-            <p>AIアバター・自動編集による説明動画作成</p>
+            <p>システムの使い方説明動画を量産する制作フロー</p>
         </div>
     </header>
 
     <div class="container">
         <div class="section">
             <h2>プロジェクト概要</h2>
-            <p>システムの使い方を説明する動画を撮影し、AIアバターを使って説明を追加。余計な間や言葉を削除し、顧客に提供できる高品質な動画マニュアルを作成します。</p>
+            <p>顧客に埋め込み可能な「システムの使い方マニュアル動画」を制作します。1本あたり約5分を目安に、必要なセクションごとに<strong>多数（何十本）</strong>制作する前提で、量産運用に耐える制作フローを構築します。
+            </p>
+
+            <div class="goal-box">
+                <strong>🎯 目標</strong>
+                <p>森田さん（事業部責任者）が作成した画面キャプチャ素材を基に、AI音声・AIアバター・字幕を付加した高品質なマニュアル動画を効率的に量産する。</p>
+            </div>
         </div>
 
         <div class="section">
-            <h2>主な機能</h2>
-            <ul class="task-list">
-                <li class="task-item"><span class="task-icon">1</span>
-                    <div>画面収録動画の自動インポート</div>
+            <h2>入力（元素材）</h2>
+
+            <div class="input-box">
+                <strong>📹 森田さんが作成する素材</strong>
+                <p>事業部責任者の森田さんが作成する素材が起点となります。</p>
+            </div>
+
+            <ul class="deliverable-list">
+                <li>
+                    <div class="deliverable-icon">1</div>
+                    <div>
+                        <strong>画面キャプチャ（クリップ動画）</strong><br>
+                        <span style="color: #64748b; font-size: 0.9rem;">森田さんのPCで、システム操作画面を画面キャプチャとして撮影</span>
+                    </div>
                 </li>
-                <li class="task-item"><span class="task-icon">2</span>
-                    <div>AIによる無音・冗長部分の自動検出・カット</div>
-                </li>
-                <li class="task-item"><span class="task-icon">3</span>
-                    <div>AIアバターによる音声ナレーション追加</div>
-                </li>
-                <li class="task-item"><span class="task-icon">4</span>
-                    <div>字幕の自動生成と表示</div>
-                </li>
-                <li class="task-item"><span class="task-icon">5</span>
-                    <div>顧客向けフォーマットでのエクスポート</div>
+                <li>
+                    <div class="deliverable-icon">2</div>
+                    <div>
+                        <strong>口頭説明（音声）</strong><br>
+                        <span style="color: #64748b; font-size: 0.9rem;">森田さんが声で説明している素材（または説明用の音声）が含まれる想定</span>
+                    </div>
                 </li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>技術スタック(案)</h2>
-            <p style="margin-bottom: 1rem;">以下の技術スタックを提案しますが、インターンの方のご経験やご希望に応じて調整可能です。</p>
-            <div>
-                <span class="badge">DaVinci Resolve</span>
-                <span class="badge">Descript</span>
-                <span class="badge">HeyGen (AIアバター)</span>
-                <span class="badge">Whisper (字幕生成)</span>
-                <span class="badge">Python (自動化)</span>
+            <h2>付加価値（動画に追加する要素）</h2>
+            <p style="margin-bottom: 1.5rem;">制作時に、以下の要素を追加して顧客視聴体験を向上させます。</p>
+
+            <div class="feature-box">
+                <strong>✨ 必須追加要素</strong>
+                <ul>
+                    <li><strong>AI音声ナレーションの挿入</strong>: 森田さん音声の扱い含め、AI音声化を検討</li>
+                    <li><strong>AIアバターの挿入</strong>: 視覚的な案内役として検討・導入</li>
+                    <li><strong>字幕の自動生成・表示</strong>: 顧客視聴で分かりやすく</li>
+                </ul>
             </div>
         </div>
 
         <div class="section">
-            <h2>ざっくりタスクリスト</h2>
-            <p style="margin-bottom: 1rem;">以下のステップで段階的に進めていく想定です。各ステップの詳細は協議しながら決定します。</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">動画制作フロー設計</div>
-                        <div class="timeline-desc">編集工程の可視化と自動化範囲の決定</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">自動編集機能の開発</div>
-                        <div class="timeline-desc">無音カット、冗長部分削除の実装</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">AIアバター統合</div>
-                        <div class="timeline-desc">ナレーション生成と動画への合成</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">品質確認・改善</div>
-                        <div class="timeline-desc">サンプル動画で検証、調整</div>
-                    </div>
-                </div>
+            <h2>使用ツール・技術スタック</h2>
+            <p style="margin-bottom: 1.5rem;">以下のツールを組み合わせてマニュアル動画を制作します。</p>
+
+            <div class="tool-card">
+                <h4>🎨 Canva（動画編集・制作の主軸）</h4>
+                <p><strong>用途:</strong> 動画編集、レイアウト調整、エフェクト追加、字幕生成・表示</p>
+                <p><strong>役割:</strong> メインの編集プラットフォーム</p>
             </div>
+
+            <div class="tool-card">
+                <h4>🔊 音読さん（音声合成）</h4>
+                <p><strong>用途:</strong> AI音声ナレーションの生成</p>
+                <p><strong>ステータス:</strong> 現時点の想定（未確定でもよいが、候補として明記）</p>
+            </div>
+
+            <div class="tool-card">
+                <h4>🎭 NoLang（AIアバター）</h4>
+                <p><strong>用途:</strong> AIアバターの挿入</p>
+                <p><strong>ステータス:</strong> 使用する場合の候補ツール</p>
+            </div>
+
+            <div class="tool-card">
+                <h4>📝 Canva字幕機能</h4>
+                <p><strong>用途:</strong> 字幕の自動生成と表示</p>
+                <p><strong>役割:</strong> 基本はCanva上で生成・表示（主軸）</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>主な作業フロー（実務ベース）</h2>
+            <p style="margin-bottom: 1.5rem;">以下の手順で、マニュアル動画を制作します。</p>
+
+            <ol class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">森田さんから素材を受領</div>
+                        <div class="flow-desc">画面キャプチャ素材（クリップ動画）と音声説明素材を共有してもらいます。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">セクションごとに動画を編集</div>
+                        <div class="flow-desc">約5分のマニュアル動画として成立するよう、素材をセクション単位で編集します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">構成・テンポ・見せ方を整理</div>
+                        <div class="flow-desc">顧客が見て理解しやすいように、動画の構成・テンポ・見せ方を調整します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">AI音声を挿入（ナレーション整備）</div>
+                        <div class="flow-desc">音読さん等を使用してAI音声ナレーションを生成し、動画に挿入します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">AIアバターを挿入</div>
+                        <div class="flow-desc">必要に応じて、NoLang等を使用してAIアバターを追加します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">字幕を生成・表示</div>
+                        <div class="flow-desc">Canvaの字幕機能を使用して、自動字幕を生成し表示します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">森田さんへ納品</div>
+                        <div class="flow-desc">完成した動画を森田さんに納品します。量産前提で運用しやすい形で管理します。</div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>納品物の定義</h2>
+            <p style="margin-bottom: 1.5rem;">森田さんへ納品する成果物の仕様を定義します。</p>
+
+            <h3>ファイル形式・仕様</h3>
+            <div class="feature-box">
+                <strong>📦 納品仕様</strong>
+                <ul>
+                    <li><strong>ファイル形式</strong>: MP4（顧客埋め込み用）</li>
+                    <li><strong>動画尺</strong>: 1本あたり約5分を目安</li>
+                    <li><strong>命名ルール</strong>: セクション名や機能名を含む統一ルール</li>
+                    <li><strong>管理単位</strong>: セクション単位で管理（何十本を想定）</li>
+                </ul>
+            </div>
+
+            <h3>量産運用ルール</h3>
+            <div class="goal-box">
+                <strong>🔄 制作ルール</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>5分基準</strong>: 1本あたり約5分で統一</li>
+                    <li><strong>字幕・アバターの統一</strong>: デザイン・配置・スタイルを統一</li>
+                    <li><strong>編集テンプレート</strong>: Canva上でテンプレート化して効率化</li>
+                    <li><strong>バージョン管理</strong>: セクションごとの更新履歴を管理</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>制作のポイント</h2>
+
+            <div class="feature-box">
+                <strong>💡 効率化のコツ</strong>
+                <ul>
+                    <li><strong>テンプレート化</strong>: オープニング・エンディング・字幕スタイルをテンプレート化</li>
+                    <li><strong>バッチ処理</strong>: 同じ操作を繰り返す部分は一括処理</li>
+                    <li><strong>命名規則の徹底</strong>: ファイル名・セクション名の統一でミスを防止</li>
+                    <li><strong>品質チェックリスト</strong>: 納品前の確認項目をリスト化</li>
+                </ul>
+            </div>
+
+            <div class="input-box">
+                <strong>🎯 顧客視点での品質基準</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>字幕が読みやすいか（フォントサイズ・表示時間）</li>
+                    <li>音声が聞き取りやすいか（音量・速度・クリア度）</li>
+                    <li>操作が追いやすいか（画面の見やすさ・テンポ）</li>
+                    <li>アバターが邪魔していないか（配置・サイズ）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>タスクリスト（ざっくり）</h2>
+            <p style="margin-bottom: 1.5rem;">以下のステップで段階的に進めていく想定です。</p>
+
+            <ol class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">素材の整理・仕分け</div>
+                        <div class="flow-desc">森田さんから受領した素材をセクションごとに整理</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">Canvaテンプレート作成</div>
+                        <div class="flow-desc">オープニング・エンディング・字幕スタイルのテンプレート作成</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">パイロット版制作（1本目）</div>
+                        <div class="flow-desc">最初の1本を丁寧に作り、フォーマットを確立</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">森田さんレビュー</div>
+                        <div class="flow-desc">パイロット版を確認してもらい、方針を確定</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">量産フェーズ</div>
+                        <div class="flow-desc">確定したフォーマットで残りのセクションを制作</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">品質チェック・納品</div>
+                        <div class="flow-desc">全動画の最終確認を行い、森田さんへ納品</div>
+                    </div>
+                </li>
+            </ol>
         </div>
 
         <div class="nav-buttons">
