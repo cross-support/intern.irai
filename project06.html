@@ -21,7 +21,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
             color: white;
             padding: 2rem;
         }
@@ -78,129 +78,125 @@
 
         .section h2 {
             font-size: 1.4rem;
-            color: #ee0979;
+            color: #0ea5e9;
             margin-bottom: 1.2rem;
             padding-bottom: 0.7rem;
             border-bottom: 2px solid #e2e8f0;
         }
 
-        .note-box {
-            background: #fff3cd;
+        .section h3 {
+            font-size: 1.1rem;
+            color: #06b6d4;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .info-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .info-box strong {
+            color: #1e40af;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .verification-box {
+            background: #fef3c7;
             border-left: 4px solid #f59e0b;
             padding: 1rem;
             border-radius: 8px;
             margin: 1rem 0;
         }
 
-        .note-box strong {
+        .verification-box strong {
             color: #d97706;
             display: block;
             margin-bottom: 0.5rem;
         }
 
-        .task-list {
+        .flow-list {
             list-style: none;
+            counter-reset: flow-counter;
         }
 
-        .task-item {
-            padding: 0.7rem 0;
+        .flow-item {
+            padding: 1rem 0;
             border-bottom: 1px solid #f1f5f9;
             display: flex;
             align-items: start;
-            gap: 0.75rem;
+            gap: 1rem;
+            counter-increment: flow-counter;
         }
 
-        .task-item:last-child {
+        .flow-item:last-child {
             border-bottom: none;
         }
 
-        .task-icon {
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            background: #ee0979;
+        .flow-number {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.1rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 0.2rem;
         }
 
-        .badge {
-            display: inline-block;
-            background: #ee0979;
-            color: white;
-            padding: 0.4rem 0.9rem;
-            border-radius: 16px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin: 0.3rem 0.3rem 0.3rem 0;
+        .flow-number::before {
+            content: counter(flow-counter);
         }
 
-        .course-list {
+        .flow-content {
+            flex: 1;
+        }
+
+        .flow-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .flow-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .course-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 0.75rem;
             margin-top: 1rem;
         }
 
         .course-item {
             background: #f8fafc;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
             border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 0.75rem;
             font-size: 0.9rem;
+            color: #475569;
         }
 
-        .timeline {
-            margin-top: 1rem;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .timeline-marker {
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
-            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .language-tag {
+            display: inline-block;
+            background: #0ea5e9;
             color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .timeline-content {
-            flex: 1;
-            padding-top: 0.2rem;
-        }
-
-        .timeline-title {
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
             font-weight: 600;
-            color: #ee0979;
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-desc {
-            font-size: 0.9rem;
-            color: #64748b;
+            margin: 0.3rem 0.3rem 0.3rem 0;
         }
 
         .nav-buttons {
@@ -212,7 +208,7 @@
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background: #ee0979;
+            background: #0ea5e9;
             color: white;
             text-decoration: none;
             border-radius: 8px;
@@ -221,7 +217,7 @@
         }
 
         .btn:hover {
-            background: #ff6a00;
+            background: #06b6d4;
             transform: translateY(-2px);
         }
 
@@ -246,7 +242,7 @@
                 font-size: 1.6rem;
             }
 
-            .course-list {
+            .course-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -256,40 +252,113 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="breadcrumb"><a href="index.html">← プロジェクト一覧に戻る</a></div>
+            <div class="breadcrumb">
+                <a href="index.html">← プロジェクト一覧に戻る</a>
+            </div>
             <div class="project-number">プロジェクト⑥</div>
             <h1>既存講座の多言語化</h1>
-            <p>26講座の翻訳・ローカライズ自動化</p>
+            <p>26講座の翻訳作業フロー運用</p>
         </div>
     </header>
 
     <div class="container">
         <div class="section">
             <h2>プロジェクト概要</h2>
-            <p>既存の26講座を多言語対応させるプロジェクトです。AIによる翻訳と人手によるレビューを組み合わせ、効率的かつ高品質なローカライゼーションを実現します。</p>
+            <p>既存の26講座を、複数の言語に翻訳する作業フローを運用します。このプロジェクトは技術開発ではなく、翻訳作業の品質とスピードを両立させる運用案件です。やましゅうさんから提供されるPowerPoint資料を基に、DeepL翻訳を活用しながら、専門用語の整合性と自然な表現を確保します。
+            </p>
 
-            <div class="note-box">
-                <strong>📌 Note</strong>
-                <p>詳細はやましゅう様のタスクとも連携しますので、この手順書では概要のみ記載しています。</p>
+            <div class="info-box">
+                <strong>📋 プロジェクトの性質</strong>
+                <p>技術開発ではなく、翻訳作業フローの運用案件です。レビュー・修正の往復を前提とした柔軟な進行を行います。</p>
             </div>
         </div>
 
         <div class="section">
-            <h2>対象講座(26講座)</h2>
-            <div class="course-list">
+            <h2>主なフロー</h2>
+            <p style="margin-bottom: 1.5rem;">以下の手順で翻訳作業を進めます。</p>
+
+            <ol class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">やましゅうさんから元資料を提供してもらう</div>
+                        <div class="flow-desc">講座コンテンツのPowerPoint（元資料）を受領します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">DeepL翻訳で初期翻訳を実施</div>
+                        <div class="flow-desc">対象言語（複数言語）への初期翻訳をDeepL翻訳を用いて実施します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">専門用語の整合・表現の調整</div>
+                        <div class="flow-desc">翻訳後、専門用語の整合性、表現のバランス、体裁を、その言語のスライドとして自然になるように整えます。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">PowerPointでレイアウト調整</div>
+                        <div class="flow-desc">PowerPoint上で、文字位置・行間・はみ出し等のレイアウト調整を行います（体裁修正）。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">一旦納品・レビュー依頼</div>
+                        <div class="flow-desc">完成した翻訳資料を一旦納品し、レビュー（指摘）をもらいます。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">指摘点の修正</div>
+                        <div class="flow-desc">指摘点・修正点があれば修正します。手戻り前提の往復フローとして運用します。</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">再納品</div>
+                        <div class="flow-desc">修正完了後、再度納品します。必要に応じてこのサイクルを繰り返します。</div>
+                    </div>
+                </li>
+            </ol>
+
+            <div class="verification-box">
+                <strong>🔍 検証（任意・要件確認中）</strong>
+                <p>「逆和訳（バックトランスレーション）」等で翻訳の妥当性検証を行うかは、要件として実施要否を今後検証・決定します（断定しない）。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>対象講座（26講座）</h2>
+            <p style="margin-bottom: 1.5rem;">以下の26講座の多言語化が必要です。</p>
+
+            <div class="course-grid">
                 <div class="course-item">ヒューマンスキルⅠ</div>
                 <div class="course-item">ヒューマンスキルⅡ</div>
-                <div class="course-item">ものづくり教育【初級】Ⅰ</div>
+                <div class="course-item">ものづくり教育プログラム【初級】Ⅰ</div>
                 <div class="course-item">ものづくり確認テスト【初級】Ⅰ</div>
-                <div class="course-item">ものづくり教育【初級】Ⅱ</div>
+                <div class="course-item">ものづくり教育プログラム【初級】Ⅱ</div>
                 <div class="course-item">ものづくり確認テスト【初級】Ⅱ</div>
-                <div class="course-item">ものづくり教育【中級】Ⅰ</div>
+                <div class="course-item">ものづくり教育プログラム【中級】Ⅰ</div>
                 <div class="course-item">ものづくり確認テスト【中級】Ⅰ</div>
-                <div class="course-item">ものづくり教育【中級】Ⅱ</div>
+                <div class="course-item">ものづくり教育プログラム【中級】Ⅱ</div>
                 <div class="course-item">ものづくり確認テスト【中級】Ⅱ</div>
-                <div class="course-item">ものづくり教育【上級】Ⅰ</div>
+                <div class="course-item">ものづくり教育プログラム【上級】Ⅰ</div>
                 <div class="course-item">ものづくり確認テスト【上級】Ⅰ</div>
-                <div class="course-item">ものづくり教育【上級】Ⅱ</div>
+                <div class="course-item">ものづくり教育プログラム【上級】Ⅱ</div>
                 <div class="course-item">ものづくり確認テスト【上級】Ⅱ</div>
                 <div class="course-item">品質管理プログラム【初級】Ⅰ</div>
                 <div class="course-item">品質管理確認テスト【初級】Ⅰ</div>
@@ -307,77 +376,82 @@
         </div>
 
         <div class="section">
-            <h2>主な機能</h2>
-            <ul class="task-list">
-                <li class="task-item"><span class="task-icon">1</span>
-                    <div>講座コンテンツの一括抽出</div>
-                </li>
-                <li class="task-item"><span class="task-icon">2</span>
-                    <div>AIによる初期翻訳(複数言語対応)</div>
-                </li>
-                <li class="task-item"><span class="task-icon">3</span>
-                    <div>専門用語の統一管理</div>
-                </li>
-                <li class="task-item"><span class="task-icon">4</span>
-                    <div>レビュー・校正ワークフロー</div>
-                </li>
-                <li class="task-item"><span class="task-icon">5</span>
-                    <div>翻訳済みコンテンツの再インポート</div>
-                </li>
-            </ul>
-        </div>
+            <h2>対象言語</h2>
+            <p style="margin-bottom: 1rem;">翻訳が必要（見込み）な言語は以下の通りです。</p>
 
-        <div class="section">
-            <h2>技術スタック(案)</h2>
-            <p style="margin-bottom: 1rem;">以下の技術スタックを提案しますが、インターンの方のご経験やご希望に応じて調整可能です。</p>
             <div>
-                <span class="badge">OpenAI API (翻訳)</span>
-                <span class="badge">Google Translate API</span>
-                <span class="badge">用語集管理DB</span>
-                <span class="badge">レビューツール</span>
+                <span class="language-tag">🇮🇩 インドネシア語</span>
+                <span class="language-tag">🇪🇸 スペイン語</span>
+                <span class="language-tag">🇵🇭 タガログ語</span>
+                <span class="language-tag">🇲🇲 ミャンマー語</span>
             </div>
+
+            <p style="margin-top: 1rem; color: #64748b; font-size: 0.95rem;">
+                ※詳細な管理はやましゅうさんが行う前提です。
+            </p>
         </div>
 
         <div class="section">
-            <h2>ざっくりタスクリスト</h2>
-            <p style="margin-bottom: 1rem;">以下のステップで段階的に進めていく想定です。各ステップの詳細は協議しながら決定します。</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">対象言語・講座の整理</div>
-                        <div class="timeline-desc">翻訳対象言語の決定、優先順位付け</div>
+            <h2>タスクリスト</h2>
+            <p style="margin-bottom: 1.5rem;">以下のタスクで段階的に進めます。</p>
+
+            <ol class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">資料受領</div>
+                        <div class="flow-desc">やましゅうさんからPowerPoint資料を受領</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">翻訳パイプライン構築</div>
-                        <div class="timeline-desc">自動翻訳〜レビュー〜再インポート</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">DeepL初期翻訳</div>
+                        <div class="flow-desc">対象言語への機械翻訳実施</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">専門用語集の作成</div>
-                        <div class="timeline-desc">業界用語の翻訳統一</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">用語・体裁調整</div>
+                        <div class="flow-desc">専門用語の整合性確保と自然な表現への調整</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">パイロット翻訳</div>
-                        <div class="timeline-desc">1〜2講座でテスト実施</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">PPTレイアウト調整</div>
+                        <div class="flow-desc">文字位置・行間・はみ出しの修正</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">5</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">全講座展開</div>
-                        <div class="timeline-desc">26講座の翻訳完了と品質管理</div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">レビュー</div>
+                        <div class="flow-desc">やましゅうさんへ納品してレビュー依頼</div>
                     </div>
-                </div>
-            </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">修正</div>
+                        <div class="flow-desc">指摘点の修正作業</div>
+                    </div>
+                </li>
+
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-content">
+                        <div class="flow-title">再納品</div>
+                        <div class="flow-desc">修正完了後の再納品（必要に応じて往復）</div>
+                    </div>
+                </li>
+            </ol>
         </div>
 
         <div class="nav-buttons">
